@@ -1756,3 +1756,312 @@ button { font-family: inherit; cursor: pointer; border: 0; background: 0; color:
     transition-duration: 0.01ms !important;
   }
 }
+
+/* =============================================================
+   MOBILE REFINEMENTS — full-site optimization for phones
+   Tighter rhythm · readable type · contained layout
+   ============================================================= */
+
+/* === Section spacing rhythm on mobile === */
+@media (max-width: 760px) {
+  .features, .how, .demo, .pricing, .tech, .faq, .final-cta {
+    padding: clamp(64px, 14vw, 100px) var(--pad-x);
+  }
+  .section__head { margin-bottom: 44px; }
+  .section__head--center { margin-bottom: 44px; }
+}
+
+/* === HERO === */
+@media (max-width: 920px) {
+  .hero { padding: 120px var(--pad-x) 48px; }
+  .hero__title { font-size: clamp(44px, 11vw, 84px); }
+  .hero__sub { font-size: 16px; line-height: 1.5; }
+  .hero__inner { gap: 32px; }
+}
+@media (max-width: 620px) {
+  .hero { padding: 110px 22px 36px; }
+  .hero__pill {
+    font-size: 11px;
+    padding: 6px 12px 6px 8px;
+    margin-bottom: 22px;
+  }
+  .hero__title {
+    font-size: clamp(38px, 12vw, 64px);
+    line-height: 0.96;
+    letter-spacing: -0.03em;
+    margin-bottom: 22px;
+  }
+  .hero__sub {
+    font-size: 15px;
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+  .hero__ctas {
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+  .hero__ctas .btn {
+    flex: 1 1 100%;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+  .hero__proof {
+    gap: 18px 22px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line-soft);
+  }
+  .hero__proof li { font-size: 12px; }
+  .hero__proof-num { font-size: 26px; }
+
+  /* Hero cards mockup — reposition for mobile clarity */
+  .hero__right { height: 360px; }
+  .card-mock { padding: 14px 16px; gap: 12px; }
+  .card-mock h4 { font-size: 17px; }
+  .card-mock__excerpt { font-size: 12px; }
+  .card-mock__tasks li { font-size: 12px; }
+  .card-mock--a { left: 4%; width: 84%; }
+  .card-mock--b { right: 2%; width: 76%; top: 38%; }
+  .card-mock--c { left: 12%; width: 72%; }
+}
+@media (max-width: 400px) {
+  .hero__right { height: 320px; }
+  .hero__title { font-size: 38px; }
+  .hero__proof { gap: 14px 18px; }
+  .hero__proof-num { font-size: 24px; }
+}
+
+/* Trust strip stack neatly on phones */
+@media (max-width: 620px) {
+  .trust {
+    margin-top: 56px;
+    padding: 22px 0;
+    gap: 14px;
+    flex-direction: column;
+  }
+  .trust__row {
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    justify-content: center;
+  }
+  .trust__row i { font-size: 5px; }
+}
+
+/* === SECTION TITLES === */
+@media (max-width: 620px) {
+  .section__title {
+    font-size: clamp(30px, 9vw, 48px);
+    line-height: 1.05;
+  }
+  .section__sub { font-size: 15px; }
+}
+
+/* === FEATURES === */
+@media (max-width: 760px) {
+  .features__grid { gap: 10px; }
+  .feature {
+    padding: 24px 22px;
+    border-radius: 16px;
+    gap: 18px;
+  }
+  .feature__visual { height: 150px; }
+  .feature--main .feature__visual { height: 180px; }
+  .feature h3 { font-size: clamp(20px, 5vw, 26px); }
+  .feature--main h3 { font-size: clamp(24px, 6vw, 32px); }
+  .feature p { font-size: 14px; line-height: 1.55; }
+  .feature__list li { font-size: 12.5px; }
+}
+@media (max-width: 400px) {
+  .feature { padding: 22px 18px; }
+  .feature__visual { height: 130px; }
+}
+
+/* === HOW IT WORKS === */
+@media (max-width: 760px) {
+  .how__steps { gap: 12px; }
+  .step {
+    padding: 28px 24px;
+    border-radius: 16px;
+    gap: 12px;
+  }
+  .step__num { font-size: 44px; }
+  .step h3 { font-size: 22px; }
+  .step p { font-size: 14.5px; line-height: 1.55; }
+}
+
+/* === DEMO === */
+@media (max-width: 760px) {
+  .demo__player { gap: 22px; }
+  .video-frame { border-radius: 14px; }
+  .video-overlay__play { width: 76px; height: 76px; }
+  .video-overlay__hint .kicker { font-size: 9px; letter-spacing: 0.16em; }
+  .video-overlay__hint strong { font-size: 14px; }
+  .demo__meta-item { padding: 18px 20px; }
+  .demo__meta-item strong { font-size: 18px; }
+  .demo__meta .kicker { font-size: 10px; }
+}
+@media (max-width: 480px) {
+  .demo__meta { grid-template-columns: 1fr; }
+  .video-overlay { padding: 22px; gap: 18px; }
+  .video-overlay__play { width: 64px; height: 64px; }
+  .video-overlay__play svg { width: 24px; height: 24px; }
+}
+
+/* === PRICING === */
+@media (max-width: 760px) {
+  .pricing__grid { gap: 14px; }
+  .plan {
+    padding: 30px 24px;
+    border-radius: 16px;
+    gap: 18px;
+  }
+  .plan h3 { font-size: clamp(24px, 6vw, 32px); }
+  .plan__currency { font-size: 20px; }
+  .plan__num { font-size: clamp(48px, 13vw, 72px); }
+  .plan__period { font-size: 12px; }
+  .plan__desc { font-size: 13.5px; }
+  .plan__features { gap: 10px; }
+  .plan__features li { font-size: 13.5px; }
+  .plan__ribbon {
+    top: -10px;
+    right: 20px;
+    font-size: 9px;
+    padding: 4px 10px;
+  }
+  .pricing__foot {
+    font-size: 12px;
+    margin-top: 28px;
+    padding: 0 8px;
+  }
+}
+
+/* === TECH === */
+@media (max-width: 760px) {
+  .tech__grid { gap: 10px; margin-bottom: 28px; }
+  .tech-card {
+    padding: 22px 20px;
+    border-radius: 12px;
+    gap: 12px;
+  }
+  .tech-card__icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+  }
+  .tech-card h4 { font-size: 15px; }
+  .tech-card p { font-size: 13px; line-height: 1.5; }
+  .tech__cta {
+    padding: 28px 24px;
+    gap: 20px;
+    border-radius: 16px;
+  }
+  .tech__cta h3 { font-size: clamp(20px, 5.5vw, 26px); }
+  .tech__cta p { font-size: 13.5px; line-height: 1.55; }
+  .tech__cta .btn { width: 100%; justify-content: center; }
+}
+
+/* === FAQ === */
+@media (max-width: 620px) {
+  .faq summary {
+    padding: 18px 20px;
+    font-size: 16px;
+    gap: 14px;
+  }
+  .faq details > p {
+    padding: 0 20px 18px;
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .faq__plus { width: 16px; height: 16px; }
+}
+
+/* === FINAL CTA === */
+@media (max-width: 620px) {
+  .final-cta__inner {
+    padding: 40px 22px;
+    border-radius: 16px;
+  }
+  .final-cta h2 {
+    font-size: clamp(32px, 9vw, 52px);
+    margin-bottom: 12px;
+  }
+  .final-cta p {
+    font-size: 14.5px;
+    margin-bottom: 28px;
+  }
+  .signup {
+    padding: 5px;
+    border-radius: 16px;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 100%;
+  }
+  .signup input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: var(--bg-card);
+    font-size: 14px;
+  }
+  .signup .btn--primary {
+    width: 100%;
+    justify-content: center;
+    border-radius: 12px;
+  }
+  .final-cta__bullets {
+    gap: 14px;
+    font-size: 12.5px;
+  }
+}
+
+/* === FOOTER === */
+@media (max-width: 760px) {
+  .footer { padding: 56px var(--pad-x) 0; }
+  .footer__main {
+    gap: 36px;
+    padding-bottom: 40px;
+  }
+  .footer__brand { gap: 14px; }
+  .brand--lg { font-size: 20px; }
+  .brand--lg .brand__mark { width: 38px; height: 38px; }
+  .footer__tagline { font-size: 13.5px; }
+  .footer__socials a { width: 36px; height: 36px; }
+  .footer__cols { gap: 28px 18px; }
+  .footer__col h4 { font-size: 10.5px; }
+  .footer__col a { font-size: 13.5px; }
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px 0;
+    font-size: 10.5px;
+    gap: 10px;
+  }
+  /* Tame the outline name on mobile */
+  .footer__big {
+    font-size: clamp(60px, 22vw, 130px);
+    margin: 0;
+    -webkit-text-stroke-width: 0.6px;
+    line-height: 0.9;
+    background: linear-gradient(180deg, transparent 0%, transparent 40%, var(--bg) 100%);
+  }
+}
+@media (max-width: 400px) {
+  .footer__big {
+    font-size: 54px;
+    -webkit-text-stroke-width: 0.5px;
+  }
+}
+
+/* === HEADER (mobile menu polish) === */
+@media (max-width: 620px) {
+  .header {
+    padding: 12px 18px;
+  }
+  .brand { font-size: 16px; }
+  .brand__mark { width: 30px; height: 30px; }
+  .brand__mark svg { width: 18px; height: 18px; }
+  .brand__badge { font-size: 8px; padding: 2px 6px; }
+  .header__cta .btn { padding: 8px 14px; font-size: 12px; }
+  .header__cta .btn svg { width: 12px; height: 12px; }
+}
