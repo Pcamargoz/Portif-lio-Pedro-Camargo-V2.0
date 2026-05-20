@@ -1334,6 +1334,236 @@ body:has(.cursor.is-hover) .cursor-dot { opacity: 0; }
 }
 
 /* =============================================================
+   MOBILE REFINEMENTS — Projetos · Contato · Footer
+   Compact, readable, balanced on phones and small tablets.
+   ============================================================= */
+
+/* === Section rhythm tightens on mobile === */
+@media (max-width: 760px) {
+  .section.projetos,
+  .section.contato {
+    padding-top: clamp(60px, 12vw, 90px);
+    padding-bottom: clamp(60px, 12vw, 90px);
+  }
+  .projetos__intro {
+    margin: -20px 0 50px;
+    font-size: clamp(16px, 4.4vw, 19px);
+    line-height: 1.45;
+  }
+  .projects { gap: clamp(70px, 16vw, 110px); }
+}
+
+/* === PROJETOS — tablet (≤900px) refinement === */
+@media (max-width: 900px) {
+  .project, .project--rev, .project--wip {
+    padding-top: 36px;
+    gap: 22px;
+  }
+  .project__index-num { font-size: clamp(64px, 14vw, 96px); }
+  .project__title {
+    font-size: clamp(36px, 9.5vw, 64px);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+  /* Stacked layout: keep meta and index left-aligned for visual harmony */
+  .project__meta,
+  .project--rev .project__meta {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .project--rev .project__index {
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .project--rev .project__index-num { order: initial; }
+  .project--rev .project__index-label { order: initial; }
+
+  /* Galeria thumbs: 2 cols (less squeezed) */
+  .project__galeria { grid-template-columns: 1fr 1fr; }
+}
+
+/* === PROJETOS — mobile (≤620px) === */
+@media (max-width: 620px) {
+  /* Project index becomes a clean row */
+  .project__index {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 14px;
+  }
+  .project__index-num { font-size: clamp(54px, 16vw, 80px); line-height: 1; }
+  .project__index-label { font-size: 10px; letter-spacing: 0.22em; }
+
+  .project__title {
+    font-size: clamp(32px, 11vw, 52px);
+    line-height: 1;
+  }
+
+  /* Description hierarchy — readable + compact */
+  .project__desc { gap: 14px; max-width: 100%; }
+  .project__desc-lead {
+    font-size: clamp(17px, 4.6vw, 20px);
+    line-height: 1.42;
+  }
+  .project__desc-body {
+    font-size: 14.5px;
+    line-height: 1.65;
+  }
+  .project__insight {
+    padding: 14px 16px;
+    border-radius: 0 6px 6px 0;
+  }
+  .project__insight .kicker { font-size: 9px; }
+  .project__insight p { font-size: 14px; line-height: 1.5; }
+
+  /* Tech tags — tighter */
+  .project__tech { gap: 6px; }
+  .project__tech li {
+    font-size: 10.5px;
+    padding: 5px 10px;
+    letter-spacing: 0.04em;
+  }
+
+  /* Links — buttons stretch to fill row evenly */
+  .project__links { gap: 8px; flex-wrap: wrap; }
+  .project__links .btn {
+    flex: 1 1 calc(50% - 4px);
+    min-width: 0;
+    justify-content: center;
+    padding: 11px 14px;
+    font-size: 10.5px;
+  }
+
+  /* Galeria: stack to 1 column (thumbs become full-width strips) */
+  .project__galeria { grid-template-columns: 1fr; gap: 10px; }
+  .project__thumb { aspect-ratio: 16 / 9; }
+
+  /* Architecture block: tight padding + clearer scroll affordance */
+  .arch { padding: 22px 16px; gap: 16px; border-radius: 8px; }
+  .arch__head { padding-bottom: 12px; }
+  .arch__head .kicker { font-size: 9.5px; }
+  .arch__svg-wrap {
+    /* Fade gradient on the right edge — signals "scroll for more" */
+    mask-image: linear-gradient(90deg, black 0%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, black 0%, black 92%, transparent 100%);
+  }
+  .arch__svg { min-width: 720px; }
+  .arch__cap {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .arch__cap code { font-size: 11.5px; padding: 1px 6px; }
+
+  /* Caption text */
+  .project__caption { font-size: 10px; letter-spacing: 0.08em; }
+
+  /* WIP banner — already responsive, slight tightening */
+  .wip-banner { padding: 16px 14px; margin-bottom: 18px; border-radius: 10px; }
+  .wip-banner__pulse { width: 12px; height: 12px; }
+}
+
+/* === PROJETOS — small mobile (≤400px) === */
+@media (max-width: 400px) {
+  .project__index-num { font-size: 56px; }
+  .project__title { font-size: 28px; }
+  .project__desc-lead { font-size: 16px; }
+  .project__desc-body { font-size: 13.5px; }
+  .project__tech li { font-size: 10px; padding: 4px 8px; }
+  .project__links .btn { padding: 10px 12px; font-size: 10px; }
+  .arch__svg { min-width: 640px; }
+  .arch__cap { font-size: 12.5px; }
+  .arch { padding: 18px 14px; }
+}
+
+/* === CONTATO — mobile refinements === */
+@media (max-width: 760px) {
+  .contato__bigtext {
+    font-size: clamp(30px, 9vw, 44px);
+    line-height: 1.08;
+    max-width: 100%;
+  }
+  .contato__wrap { gap: clamp(36px, 9vw, 56px); }
+}
+
+@media (max-width: 620px) {
+  .contact-card--featured {
+    padding: 28px 22px;
+    gap: 20px;
+    border-radius: 10px;
+  }
+  .contact-card--featured .kicker {
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+  }
+  .contact-card__featured-value {
+    font-size: clamp(38px, 13vw, 60px);
+    line-height: 0.95;
+  }
+  .contact-card__featured-handle {
+    font-size: 12px;
+    word-break: break-all;
+  }
+  .contact-card__featured-r p {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  .contact-card__featured-arrow {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+  }
+  .contact-card {
+    padding: 20px 22px;
+    gap: 14px;
+    grid-template-columns: 1fr;
+  }
+  .contact-card .kicker {
+    font-size: 9.5px;
+    letter-spacing: 0.16em;
+  }
+  .contact-card__value {
+    font-size: clamp(15px, 4.5vw, 19px);
+    word-break: break-word;
+    line-height: 1.25;
+  }
+}
+
+@media (max-width: 380px) {
+  .contato__bigtext { font-size: 28px; }
+  .contact-card__featured-value { font-size: 36px; }
+  .contact-card { padding: 18px 18px; }
+}
+
+/* === FOOTER — mobile refinements === */
+@media (max-width: 700px) {
+  .foot {
+    padding: 50px var(--pad-x) 0;
+  }
+  .foot__row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding-bottom: 32px;
+  }
+  .foot__row .kicker {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+  }
+  .foot__big {
+    font-size: clamp(60px, 22vw, 130px);
+    margin: 0;
+    line-height: 0.9;
+    -webkit-text-stroke-width: 0.6px;
+  }
+}
+
+@media (max-width: 400px) {
+  .foot__big {
+    font-size: 56px;
+    -webkit-text-stroke-width: 0.5px;
+  }
+}
+
+/* =============================================================
    ATUAÇÃO — current professional work section
    ============================================================= */
 .atuacao__intro {
