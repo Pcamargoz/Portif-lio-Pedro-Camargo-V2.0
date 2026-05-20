@@ -726,24 +726,33 @@
         CultivaClub
       </h3>
 
-      <p class="project__desc">
-        Aplicação web que <strong>evoluiu de uma arquitetura distribuída de três
-        microsserviços</strong> (Usuários, Objetos e API Gateway) para um
-        <strong>monolito modular</strong> em Spring Boot — uma decisão de
-        engenharia para simplificar o deploy, reduzir custo operacional e
-        acelerar o desenvolvimento, preservando a separação clara por domínio.
-      </p>
-      <p class="project__desc">
-        Backend em <strong>Java 21 + Spring Boot</strong> exposto como API REST
-        e consumido pelo frontend em <strong>Vercel</strong>; persistência em
-        <strong>PostgreSQL serverless (Neon)</strong> com dois databases lógicos
-        (<em>usuarios</em> e <em>objetos</em>) e pools Hikari dedicados; deploy
-        contínuo em <strong>Render</strong>. O <strong>UptimeRobot</strong>
-        mantém a instância aquecida via <code>/actuator/health</code> a cada 5
-        minutos. Aprendizado central: refatorar sem perder <em>boundaries</em>
-        de domínio — <code>usuarios/</code> e <code>objetos/</code> só conversam
-        por interface de serviço.
-      </p>
+      <div class="project__desc">
+        <p class="project__desc-lead">
+          Refatorei o <strong>CultivaClub</strong> de uma arquitetura distribuída em
+          <strong>três microsserviços</strong> (Usuários, Objetos e API Gateway) para
+          um <strong>monolito modular em Spring Boot</strong> — preservando
+          <em>boundaries</em> de domínio enquanto simplifica deploy, reduz custo
+          operacional e acelera entregas.
+        </p>
+
+        <p class="project__desc-body">
+          Backend em <strong>Java 21 + Spring Boot</strong> rodando na
+          <strong>Render</strong>, frontend em <strong>Vercel</strong>,
+          persistência em <strong>PostgreSQL serverless (Neon)</strong> com dois
+          databases lógicos e pools Hikari dedicados.
+          <strong>UptimeRobot</strong> mantém a instância aquecida via
+          <code>/actuator/health</code> a cada 5 minutos.
+        </p>
+
+        <aside class="project__insight">
+          <span class="kicker kicker--accent">APRENDIZADO CENTRAL</span>
+          <p>
+            Refatorar sem vazamento entre camadas: <code>usuarios/</code> e
+            <code>objetos/</code> só conversam por interface de serviço — nunca
+            por acesso direto ao repositório alheio.
+          </p>
+        </aside>
+      </div>
 
       <ul class="project__tech">
         <li>Java 21</li>
@@ -759,16 +768,17 @@
       </ul>
 
       <figure class="project__media">
-        <div class="project__media-frame project__media-frame--linkedin" data-media-slot>
+        <div class="project__media-frame project__media-frame--video" data-media-slot>
           <iframe
-            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7456344991314006016"
-            title="Demonstração do CultivaClub — vídeo no LinkedIn"
+            src="https://www.youtube.com/embed/Y_FaWIzn7W4?rel=0&modestbranding=1"
+            title="Demonstração do CultivaClub no YouTube"
             loading="lazy"
-            allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen></iframe>
         </div>
         <figcaption class="project__caption">
-          <span>Fig. 01 · Vídeo demonstrativo no LinkedIn — apresentação completa do produto e funcionalidades pelo autor.</span>
+          <span>Fig. 01 · Vídeo demonstrativo no YouTube — tour completo pela aplicação narrado pelo autor.</span>
         </figcaption>
       </figure>
 
@@ -901,9 +911,9 @@
           <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1 .8-.2 1.7-.3 2.5-.3s1.7.1 2.5.3c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.3 6.8-5.1 6.8-9.6C22 6.6 17.5 2 12 2z" fill="currentColor"/></svg>
           Código no GitHub
         </a>
-        <a class="btn btn--ghost btn--sm" href="https://www.linkedin.com/posts/pedro-carmargo01_cultivaclub-projetodefaculdade-desenvolvimentoweb-ugcPost-7456344991314006016-foMq" target="_blank" rel="noopener">
-          <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-11 14H5.5v-8H8v8zM6.7 7.7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM18.5 17H16v-4.3c0-1-.4-1.7-1.3-1.7-.8 0-1.2.5-1.4 1 0 .2-.1.5-.1.7V17H10.7s.1-7.4 0-8.2h2.5v1.2c.3-.5 1-1.4 2.4-1.4 1.8 0 3 1.2 3 3.6V17z" fill="currentColor"/></svg>
-          Ver demo no LinkedIn
+        <a class="btn btn--ghost btn--sm" href="https://youtu.be/Y_FaWIzn7W4" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.76C18.25 5 12 5 12 5s-6.25 0-7.84.44A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.76 1.76C5.75 19 12 19 12 19s6.25 0 7.84-.44a2.5 2.5 0 0 0 1.76-1.76C22 15.2 22 12 22 12s0-3.2-.4-4.8zM10 15.5v-7l6 3.5-6 3.5z" fill="currentColor"/></svg>
+          Assistir no YouTube
         </a>
         <a class="btn btn--ghost btn--sm" href="#" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9M10 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>

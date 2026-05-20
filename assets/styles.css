@@ -930,13 +930,84 @@ body:has(.cursor.is-hover) .cursor-dot { opacity: 0; }
 
 .project__desc {
   grid-area: desc;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 56ch;
+  margin: 0;
+  font-family: var(--sans);
+}
+.project__desc p { margin: 0; }
+
+/* Lead paragraph — punchy, serif, larger */
+.project__desc-lead {
   font-family: var(--serif);
   font-weight: 300;
-  font-size: clamp(16px, 1.3vw, 19px);
-  line-height: 1.55;
+  font-size: clamp(18px, 1.55vw, 23px);
+  line-height: 1.4;
+  letter-spacing: -0.012em;
+  color: var(--ink);
+}
+.project__desc-lead strong {
+  color: var(--ink);
+  font-weight: 400;
+  font-variation-settings: "opsz" 144, "SOFT" 40;
+}
+.project__desc-lead em {
+  font-style: italic;
+  color: var(--accent);
+  font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+}
+
+/* Body paragraph — clean sans, secondary */
+.project__desc-body {
+  font-family: var(--sans);
+  font-size: clamp(14px, 1.1vw, 15.5px);
+  line-height: 1.7;
   color: var(--ink-soft);
-  margin: 0;
-  max-width: 50ch;
+}
+.project__desc-body strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* Insight callout — accent left border, subtle accent bg */
+.project__insight {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px 20px;
+  margin-top: 2px;
+  border-left: 2px solid var(--accent);
+  background: linear-gradient(90deg, rgba(227,123,62,0.07), rgba(227,123,62,0) 85%);
+  border-radius: 0 6px 6px 0;
+}
+.project__insight .kicker {
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+}
+.project__insight p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(14px, 1.2vw, 17px);
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+/* YouTube / video media variant — proper 16:9 */
+.project__media-frame--video {
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+.project__media-frame--video iframe {
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .project__desc { gap: 14px; }
+  .project__insight { padding: 14px 16px; }
 }
 
 .project__tech {
@@ -2141,11 +2212,9 @@ body:has(.cursor.is-hover) .cursor-dot { opacity: 0; }
   }
 }
 
-/* Description with multiple paragraphs */
-.project__desc + .project__desc {
-  margin-top: 16px;
-}
+/* Inline code styling inside descriptions and architecture caption */
 .project__desc code,
+.project__insight code,
 .arch__cap code {
   font-family: var(--mono);
   font-size: 0.88em;
@@ -2155,32 +2224,10 @@ body:has(.cursor.is-hover) .cursor-dot { opacity: 0; }
   background: rgba(244,239,230,0.04);
   color: var(--accent);
   letter-spacing: 0;
+  white-space: nowrap;
 }
-
-/* =============================================================
-   LinkedIn embed — taller frame, no forced 16:10
-   ============================================================= */
-.project__media-frame--linkedin {
-  aspect-ratio: auto;
-  height: auto;
-  min-height: 720px;
-  background: transparent;
-}
-.project__media-frame--linkedin iframe {
-  position: relative;
-  height: 720px;
-  width: 100%;
-  display: block;
-  object-fit: unset;
-  background: #1B1814;
-}
-.project__media-frame--linkedin::before { display: none; }
-@media (max-width: 900px) {
-  .project__media-frame--linkedin,
-  .project__media-frame--linkedin iframe {
-    min-height: 640px;
-    height: 640px;
-  }
+.project__insight code {
+  font-size: 0.82em;
 }
 
 /* =============================================================
