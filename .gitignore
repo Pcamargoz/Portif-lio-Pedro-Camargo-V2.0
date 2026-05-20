@@ -1,0 +1,31 @@
+# Claude Code session data
+.claude/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Node / build (caso vire SPA depois)
+node_modules/
+dist/
+build/
+.env
+.env.local
+
+# Vercel
+.vercel
+
+# Large media — GitHub rejeita arquivos > 100MB sem Git LFS.
+# Para deploy com vídeo, use:
+#   1) Vercel CLI direto (sem Git):  cd cultivaclub && npx vercel
+#   2) Git LFS:  git lfs track "*.mp4" && commitar normalmente
+#   3) Hospedar vídeo em CDN externo (Cloudflare R2, Bunny.net) e atualizar src=
+cultivaclub/assets/cultivaclub-demo.mp4
+*.mp4
+*.mov
+*.avi
+*.mkv

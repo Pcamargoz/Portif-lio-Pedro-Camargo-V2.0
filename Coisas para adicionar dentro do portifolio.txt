@@ -1,0 +1,14 @@
+Link do vídeo do projeto cultiva club: https://www.linkedin.com/posts/pedro-carmargo01_cultivaclub-projetodefaculdade-desenvolvimentoweb-ugcPost-7456344991314006016-foMq?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEDjAcABcf87gnzn7AoLCwka06PT7icKOvo
+
+Link do git hub : https://github.com/Pcamargoz/Projeto-Cultiva-Club-Back-End-Monolito-
+
+Lembrar de adicionar o que esta no readme dele na aba de "sobre o projeto".
+
+
+
+Projeto da duda aonde eu fiz uma planilha inteligente para uma companheira !
+Link do GitHub : https://github.com/Pcamargoz/Projeto-Planilha-inteligente
+
+lembrar de criar o readme e aplicar um gitignore dentro da pasta do back end para que ele não suba para o repo.
+
+ 

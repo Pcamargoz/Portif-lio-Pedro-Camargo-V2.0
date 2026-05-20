@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>CultivaClub — Cards, tarefas e calendário pra quem cultiva ideias</title>
+<meta name="description" content="CultivaClub é a plataforma de cards, tarefas e calendário feita pra times que tratam ideia como semente. Spring Boot, PostgreSQL e visão de produto." />
+<meta name="theme-color" content="#0A100D" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CultivaClub — Cards, tarefas e calendário" />
+<meta property="og:description" content="Cards, tarefas e calendário em um único espaço — feito pra times que tratam ideia como semente." />
+<meta property="og:locale" content="pt_BR" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300..800&family=JetBrains+Mono:wght@300..600&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="assets/styles.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A100D'/%3E%3Cpath d='M16 8c-3 0-5 2-5 5 0 2 1 3 2 4l-1 7h8l-1-7c1-1 2-2 2-4 0-3-2-5-5-5z' fill='%239CFA47'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+<!-- Decorative grain overlay -->
+<div class="grain" aria-hidden="true"></div>
+<div class="atmosphere" aria-hidden="true"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <a href="#top" class="brand" aria-label="CultivaClub — início">
+    <span class="brand__mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="22" height="22">
+        <path d="M12 3c-3 1-5 4-5 7 0 2 1 4 2 5l-1 6h8l-1-6c1-1 2-3 2-5 0-3-2-6-5-7z" fill="currentColor"/>
+        <path d="M9 9c2 0 3 2 3 4M15 9c-2 0-3 2-3 4" stroke="rgba(10,16,13,0.5)" stroke-width="1" fill="none" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <span class="brand__text">cultiva<em>club</em></span>
+    <span class="brand__badge">BETA</span>
+  </a>
+
+  <nav class="header__nav" aria-label="Navegação principal">
+    <a href="#recursos">Recursos</a>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#demo">Demo</a>
+    <a href="#precos">Preços</a>
+    <a href="#tech">Engenharia</a>
+  </nav>
+
+  <div class="header__cta">
+    <a href="#" class="link-q">Entrar</a>
+    <a href="#cta-final" class="btn btn--primary btn--sm">
+      <span>Começar grátis</span>
+      <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+    </a>
+  </div>
+
+  <button class="header__burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__blob hero__blob--a"></div>
+    <div class="hero__blob hero__blob--b"></div>
+    <div class="hero__grid"></div>
+  </div>
+
+  <div class="hero__inner">
+    <div class="hero__left">
+      <a href="#tech" class="hero__pill">
+        <span class="hero__pill-dot"></span>
+        <span>Open core · v1.0 em beta aberto</span>
+        <span class="hero__pill-arrow">→</span>
+      </a>
+
+      <h1 class="hero__title">
+        Organize o que <em>cultiva.</em>
+        <br/>
+        Colha o que <em>importa.</em>
+      </h1>
+
+      <p class="hero__sub">
+        <strong>Cards, tarefas e calendário</strong> num único espaço — feito pra
+        quem trata ideia como semente. Plante, regue, organize e veja o que
+        nasce.
+      </p>
+
+      <div class="hero__ctas">
+        <a href="#cta-final" class="btn btn--primary">
+          <span>Criar conta grátis</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 2l6 6-6 6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#demo" class="btn btn--ghost">
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M6.5 5.5l4 2.5-4 2.5z" fill="currentColor"/></svg>
+          <span>Ver demo (2&nbsp;min)</span>
+        </a>
+      </div>
+
+      <ul class="hero__proof">
+        <li>
+          <span class="hero__proof-num">2k+</span>
+          <span>cultivadores ativos</span>
+        </li>
+        <li>
+          <span class="hero__proof-num">50k</span>
+          <span>cards organizados</span>
+        </li>
+        <li>
+          <span class="hero__proof-num">99.9<em>%</em></span>
+          <span>uptime garantido</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="hero__right" aria-hidden="true">
+      <div class="cards-board">
+        <!-- floating cards mockup -->
+        <article class="card-mock card-mock--a">
+          <header>
+            <span class="card-mock__tag tag--green">IDEIA</span>
+            <span class="card-mock__date">hoje</span>
+          </header>
+          <h4>Refatorar onboarding</h4>
+          <ul class="card-mock__tasks">
+            <li class="done"><span class="chk"></span> Mapear etapas atuais</li>
+            <li class="done"><span class="chk"></span> Entrevistar 5 usuários</li>
+            <li><span class="chk"></span> Prototipar v2</li>
+          </ul>
+          <footer>
+            <span class="avatars">
+              <span class="av av--1">P</span>
+              <span class="av av--2">M</span>
+              <span class="av av--3">+2</span>
+            </span>
+            <span class="card-mock__progress">67%</span>
+          </footer>
+        </article>
+
+        <article class="card-mock card-mock--b">
+          <header>
+            <span class="card-mock__tag tag--gold">PRO</span>
+            <span class="card-mock__date">28 mai</span>
+          </header>
+          <h4>Lançar campanha de junho</h4>
+          <p class="card-mock__excerpt">3 tarefas vinculadas ao calendário desta semana.</p>
+          <footer>
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="card-mock__progress card-mock__progress--gold">⭐ Pro</span>
+          </footer>
+        </article>
+
+        <article class="card-mock card-mock--c">
+          <header>
+            <span class="card-mock__tag tag--mint">CALENDÁRIO</span>
+            <span class="card-mock__date">qua</span>
+          </header>
+          <h4>Sprint 14 · Review</h4>
+          <div class="card-mock__time">
+            <svg viewBox="0 0 14 14" width="12" height="12"><circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v3l2 1.5" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg>
+            14:00 — 15:30
+          </div>
+        </article>
+
+        <div class="cards-floats">
+          <span class="float float--1"></span>
+          <span class="float float--2"></span>
+          <span class="float float--3"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust strip -->
+  <div class="trust">
+    <span class="trust__label">Construído com</span>
+    <div class="trust__row">
+      <span>JAVA&nbsp;21</span>
+      <i>●</i>
+      <span>SPRING&nbsp;BOOT</span>
+      <i>●</i>
+      <span>POSTGRESQL</span>
+      <i>●</i>
+      <span>NEON</span>
+      <i>●</i>
+      <span>RENDER</span>
+      <i>●</i>
+      <span>VERCEL</span>
+      <i>●</i>
+      <span>HIKARI</span>
+      <i>●</i>
+      <span>JPA</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECURSOS ============ -->
+<section class="features" id="recursos">
+  <header class="section__head">
+    <span class="eyebrow"><span class="eyebrow__dot"></span> Recursos</span>
+    <h2 class="section__title">
+      Tudo o que você planta tem <em>espaço para crescer.</em>
+    </h2>
+    <p class="section__sub">
+      Cada funcionalidade desenhada pra reduzir fricção e amplificar foco —
+      do primeiro card até a colheita.
+    </p>
+  </header>
+
+  <div class="features__grid">
+    <article class="feature feature--main">
+      <div class="feature__visual feature__visual--cards">
+        <div class="mini-card mini-card--1">
+          <span class="mini-card__bar"></span>
+          <span class="mini-card__bar mini-card__bar--short"></span>
+        </div>
+        <div class="mini-card mini-card--2">
+          <span class="mini-card__bar"></span>
+          <span class="mini-card__bar mini-card__bar--short"></span>
+        </div>
+        <div class="mini-card mini-card--3">
+          <span class="mini-card__bar"></span>
+        </div>
+      </div>
+      <div class="feature__body">
+        <span class="feature__num">01</span>
+        <h3>Cards que evoluem com você</h3>
+        <p>
+          Crie cartões editáveis pra cada ideia, projeto ou área. Anexe tarefas,
+          delegue para o time, defina papéis (User, Pro, Admin) e veja o
+          progresso em tempo real.
+        </p>
+        <ul class="feature__list">
+          <li>Edição inline · drag &amp; drop</li>
+          <li>Permissões por papel</li>
+          <li>Histórico de mudanças</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="feature">
+      <div class="feature__visual feature__visual--tasks">
+        <div class="task-row done"><span class="chk"></span><span class="task-bar"></span></div>
+        <div class="task-row done"><span class="chk"></span><span class="task-bar task-bar--med"></span></div>
+        <div class="task-row"><span class="chk"></span><span class="task-bar task-bar--long"></span></div>
+        <div class="task-row"><span class="chk"></span><span class="task-bar"></span></div>
+      </div>
+      <div class="feature__body">
+        <span class="feature__num">02</span>
+        <h3>Tarefas com foco real</h3>
+        <p>
+          Quebre cada card em ações concretas. Marque concluídas, reordene em um
+          clique e mantenha a atenção no que importa.
+        </p>
+      </div>
+    </article>
+
+    <article class="feature">
+      <div class="feature__visual feature__visual--calendar">
+        <div class="cal-grid">
+          <span></span><span></span><span class="active"></span><span></span>
+          <span></span><span></span><span></span>
+          <span></span><span class="active"></span><span></span><span></span>
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="feature__body">
+        <span class="feature__num">03</span>
+        <h3>Calendário inteligente</h3>
+        <p>
+          Visualize todas as suas tarefas distribuídas no tempo. A API
+          <code>/api/cards/tarefas/calendario</code> mantém tudo sincronizado.
+        </p>
+      </div>
+    </article>
+
+    <article class="feature feature--pro">
+      <div class="feature__visual feature__visual--pro">
+        <div class="pro-glow"></div>
+        <svg viewBox="0 0 60 60" width="60" height="60">
+          <path d="M30 6l6 18h18l-15 11 6 19-15-11-15 11 6-19-15-11h18z"
+                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="feature__body">
+        <span class="feature__num">04</span>
+        <h3>Recursos Pro</h3>
+        <p>
+          Cards ilimitados, validações avançadas, prioridade no atendimento e
+          features exclusivas. <em>Cultivadores Pro</em> colhem mais.
+        </p>
+        <a href="#precos" class="feature__link">
+          Ver planos <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ COMO FUNCIONA ============ -->
+<section class="how" id="como-funciona">
+  <header class="section__head section__head--center">
+    <span class="eyebrow"><span class="eyebrow__dot"></span> Fluxo</span>
+    <h2 class="section__title">
+      Três passos do <em>plantio à colheita.</em>
+    </h2>
+  </header>
+
+  <ol class="how__steps">
+    <li class="step">
+      <div class="step__num">01</div>
+      <h3>Crie seu cartão</h3>
+      <p>
+        Cada ideia merece espaço. Crie um card em segundos — título, descrição,
+        tipo e quem participa.
+      </p>
+    </li>
+    <li class="step">
+      <div class="step__num">02</div>
+      <h3>Plante tarefas</h3>
+      <p>
+        Divida o card em ações claras. Atribua, ordene e marque concluídas
+        conforme a ideia ganha forma.
+      </p>
+    </li>
+    <li class="step">
+      <div class="step__num">03</div>
+      <h3>Colha resultados</h3>
+      <p>
+        Veja tudo no calendário, acompanhe o progresso e celebre cada etapa
+        finalizada. Repita.
+      </p>
+    </li>
+  </ol>
+
+  <div class="how__line" aria-hidden="true"></div>
+</section>
+
+<!-- ============ DEMO (VIDEO) ============ -->
+<section class="demo" id="demo">
+  <header class="section__head section__head--center">
+    <span class="eyebrow"><span class="eyebrow__dot"></span> Demo em vídeo</span>
+    <h2 class="section__title">
+      Veja o CultivaClub <em>em ação.</em>
+    </h2>
+    <p class="section__sub">
+      Tour completo pela aplicação em menos de 2 minutos — narrado pelo
+      criador.
+    </p>
+  </header>
+
+  <div class="demo__player">
+    <div class="video-frame video-frame--active" id="video-frame">
+      <video
+        id="demo-video"
+        src="assets/cultivaclub-demo.mp4"
+        controls
+        playsinline
+        preload="metadata"
+        controlslist="nodownload">
+        Seu navegador não suporta vídeo HTML5.
+        <a href="assets/cultivaclub-demo.mp4">Baixar vídeo</a>.
+      </video>
+
+      <!-- Custom overlay play button (hides once playback starts) -->
+      <button class="video-overlay" id="video-overlay" type="button" aria-label="Reproduzir vídeo demo">
+        <span class="video-overlay__play">
+          <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true">
+            <path d="M7 4l13 8-13 8z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="video-overlay__hint">
+          <span class="kicker">DESIGN &amp; FUNCIONALIDADE DO PROJETO</span>
+          <strong>Tour completo · narrado pelo criador</strong>
+        </span>
+      </button>
+    </div>
+
+    <div class="demo__meta">
+      <div class="demo__meta-item">
+        <span class="kicker">DURAÇÃO</span>
+        <strong>~2 minutos</strong>
+      </div>
+      <div class="demo__meta-item">
+        <span class="kicker">FORMATO</span>
+        <strong>1080p · MP4</strong>
+      </div>
+      <div class="demo__meta-item">
+        <span class="kicker">IDIOMA</span>
+        <strong>Português</strong>
+      </div>
+      <div class="demo__meta-item">
+        <span class="kicker">NARRAÇÃO</span>
+        <strong>Pedro César</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="pricing" id="precos">
+  <header class="section__head section__head--center">
+    <span class="eyebrow"><span class="eyebrow__dot"></span> Planos</span>
+    <h2 class="section__title">
+      Comece <em>grátis.</em> Cresça como <em>Pro.</em>
+    </h2>
+    <p class="section__sub">
+      Sem cartão pra começar. Suba pro plano Pro quando precisar de mais
+      espaço pra plantar.
+    </p>
+  </header>
+
+  <div class="pricing__grid">
+    <article class="plan">
+      <header class="plan__head">
+        <span class="plan__tag">FREE</span>
+        <h3>Cultivador</h3>
+      </header>
+      <div class="plan__price">
+        <span class="plan__currency">R$</span>
+        <span class="plan__num">0</span>
+        <span class="plan__period">para sempre</span>
+      </div>
+      <p class="plan__desc">
+        Perfeito pra quem está começando a organizar ideias.
+      </p>
+      <ul class="plan__features">
+        <li><span class="tick"></span> Até 10 cards ativos</li>
+        <li><span class="tick"></span> Tarefas ilimitadas por card</li>
+        <li><span class="tick"></span> Visualização em calendário</li>
+        <li><span class="tick"></span> Suporte por e-mail</li>
+        <li><span class="tick"></span> Backup semanal automático</li>
+      </ul>
+      <a href="#cta-final" class="btn btn--ghost btn--block">
+        Começar grátis
+      </a>
+    </article>
+
+    <article class="plan plan--featured">
+      <span class="plan__ribbon">MAIS POPULAR</span>
+      <header class="plan__head">
+        <span class="plan__tag plan__tag--pro">PRO</span>
+        <h3>Cultivador <em>Pro</em></h3>
+      </header>
+      <div class="plan__price">
+        <span class="plan__currency">R$</span>
+        <span class="plan__num">29</span>
+        <span class="plan__period">/ mês</span>
+      </div>
+      <p class="plan__desc">
+        Pra quem leva a sério o que está cultivando.
+      </p>
+      <ul class="plan__features">
+        <li><span class="tick tick--pro"></span> <strong>Cards ilimitados</strong></li>
+        <li><span class="tick tick--pro"></span> Validações avançadas</li>
+        <li><span class="tick tick--pro"></span> Calendário com recorrência</li>
+        <li><span class="tick tick--pro"></span> Permissões e roles customizadas</li>
+        <li><span class="tick tick--pro"></span> Histórico completo</li>
+        <li><span class="tick tick--pro"></span> Suporte prioritário</li>
+        <li><span class="tick tick--pro"></span> Acesso antecipado a novos recursos</li>
+      </ul>
+      <a href="#cta-final" class="btn btn--primary btn--block">
+        Virar Pro
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <p class="pricing__foot">
+    Todos os planos incluem segurança em padrão AWS, backup automático e API REST documentada.
+  </p>
+</section>
+
+<!-- ============ TECH ============ -->
+<section class="tech" id="tech">
+  <header class="section__head">
+    <span class="eyebrow"><span class="eyebrow__dot"></span> Engenharia</span>
+    <h2 class="section__title">
+      Open core. <em>Stack moderna.</em>
+    </h2>
+    <p class="section__sub">
+      Sob o capô, decisões de engenharia que priorizam confiabilidade,
+      escalabilidade e deploy simples.
+    </p>
+  </header>
+
+  <div class="tech__grid">
+    <div class="tech-card">
+      <span class="tech-card__icon">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <h4>Java 21 + Spring Boot</h4>
+      <p>Monolito modular com separação clara por domínio (usuários e objetos).</p>
+    </div>
+
+    <div class="tech-card">
+      <span class="tech-card__icon">
+        <svg viewBox="0 0 24 24" width="22" height="22"><ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </span>
+      <h4>PostgreSQL · Neon</h4>
+      <p>Bancos serverless, dois databases lógicos com pools Hikari dedicados.</p>
+    </div>
+
+    <div class="tech-card">
+      <span class="tech-card__icon">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M3 17h18M3 12h18M3 7h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </span>
+      <h4>API REST</h4>
+      <p>Endpoints documentados de cadastro, login, cards, tarefas e calendário.</p>
+    </div>
+
+    <div class="tech-card">
+      <span class="tech-card__icon">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 18l-3-7 9-7 9 7-3 7M6 18h12M9 22l3-4 3 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </span>
+      <h4>Vercel + Render</h4>
+      <p>Frontend na Vercel, backend na Render. CI/CD com push direto do Git.</p>
+    </div>
+
+    <div class="tech-card">
+      <span class="tech-card__icon">
+        <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+      </span>
+      <h4>UptimeRobot · keep-alive</h4>
+      <p>Ping em <code>/actuator/health</code> a cada 5 min — zero cold-start.</p>
+    </div>
+
+    <div class="tech-card">
+      <span class="tech-card__icon">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3l8 4v10l-8 4-8-4V7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+      </span>
+      <h4>Segurança em camadas</h4>
+      <p>Spring Security, CORS, tratamento global de exceções e validação por domínio.</p>
+    </div>
+  </div>
+
+  <aside class="tech__cta">
+    <div>
+      <span class="kicker">CÓDIGO ABERTO</span>
+      <h3>Quer ver como foi construído?</h3>
+      <p>Repositório público no GitHub com toda a estrutura modular, decisões de arquitetura e roadmap.</p>
+    </div>
+    <a class="btn btn--ghost" href="https://github.com/Pcamargoz" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1 .8-.2 1.7-.3 2.5-.3s1.7.1 2.5.3c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.3 6.8-5.1 6.8-9.6C22 6.6 17.5 2 12 2z" fill="currentColor"/></svg>
+      Ver código no GitHub
+    </a>
+  </aside>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+  <header class="section__head">
+    <span class="eyebrow"><span class="eyebrow__dot"></span> Dúvidas</span>
+    <h2 class="section__title">Perguntas frequentes</h2>
+  </header>
+
+  <div class="faq__list">
+    <details>
+      <summary>
+        <span>Posso usar o CultivaClub de graça?</span>
+        <span class="faq__plus" aria-hidden="true"></span>
+      </summary>
+      <p>Sim. O plano Cultivador é gratuito pra sempre, com até 10 cards ativos e tarefas ilimitadas por card.</p>
+    </details>
+
+    <details>
+      <summary>
+        <span>Preciso de cartão de crédito pra começar?</span>
+        <span class="faq__plus" aria-hidden="true"></span>
+      </summary>
+      <p>Não. Você cria sua conta em 30 segundos com email + senha — sem cartão, sem trial.</p>
+    </details>
+
+    <details>
+      <summary>
+        <span>O CultivaClub é open source?</span>
+        <span class="faq__plus" aria-hidden="true"></span>
+      </summary>
+      <p>O core é aberto e fica disponível no GitHub. Funcionalidades Pro são desenvolvidas privadamente, mas o produto livre é totalmente utilizável.</p>
+    </details>
+
+    <details>
+      <summary>
+        <span>Como funciona o suporte?</span>
+        <span class="faq__plus" aria-hidden="true"></span>
+      </summary>
+      <p>Plano Cultivador tem suporte por e-mail. Plano Pro tem suporte prioritário com SLA de 4h em dias úteis.</p>
+    </details>
+
+    <details>
+      <summary>
+        <span>Posso exportar meus dados?</span>
+        <span class="faq__plus" aria-hidden="true"></span>
+      </summary>
+      <p>Sim. Em qualquer plano, você pode exportar todos os cards e tarefas em JSON ou CSV a qualquer momento.</p>
+    </details>
+
+    <details>
+      <summary>
+        <span>Quem está por trás do projeto?</span>
+        <span class="faq__plus" aria-hidden="true"></span>
+      </summary>
+      <p>O CultivaClub é mantido por <a href="https://www.linkedin.com/in/pedro-carmargo01" target="_blank" rel="noopener">Pedro César Camargo</a>, desenvolvedor back-end e consultor de implantação de ERP.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="final-cta" id="cta-final">
+  <div class="final-cta__inner">
+    <span class="final-cta__decoration" aria-hidden="true"></span>
+    <h2>
+      Comece a <em>cultivar</em> hoje.
+    </h2>
+    <p>
+      Crie sua conta em 30 segundos. Sem cartão, sem trial — só você e suas
+      ideias num espaço pra crescer.
+    </p>
+
+    <form class="signup" onsubmit="event.preventDefault(); this.classList.add('sent');">
+      <label class="sr-only" for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+      <button type="submit" class="btn btn--primary">
+        <span>Criar conta grátis</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+      </button>
+      <span class="signup__sent">✓ Quase lá — confira seu e-mail.</span>
+    </form>
+
+    <ul class="final-cta__bullets">
+      <li>✓ Setup em 30 segundos</li>
+      <li>✓ Sem cartão de crédito</li>
+      <li>✓ Cancele quando quiser</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__main">
+    <div class="footer__brand">
+      <a href="#top" class="brand brand--lg">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22">
+            <path d="M12 3c-3 1-5 4-5 7 0 2 1 4 2 5l-1 6h8l-1-6c1-1 2-3 2-5 0-3-2-6-5-7z" fill="currentColor"/>
+            <path d="M9 9c2 0 3 2 3 4M15 9c-2 0-3 2-3 4" stroke="rgba(10,16,13,0.5)" stroke-width="1" fill="none"/>
+          </svg>
+        </span>
+        <span class="brand__text">cultiva<em>club</em></span>
+      </a>
+      <p class="footer__tagline">Cards, tarefas e calendário pra quem cultiva ideias.</p>
+      <div class="footer__socials">
+        <a href="https://github.com/Pcamargoz" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1 .8-.2 1.7-.3 2.5-.3s1.7.1 2.5.3c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.3 6.8-5.1 6.8-9.6C22 6.6 17.5 2 12 2z" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/pedro-carmargo01" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-11 14H5.5v-8H8v8zM6.7 7.7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM18.5 17H16v-4.3c0-1-.4-1.7-1.3-1.7-.8 0-1.2.5-1.4 1 0 .2-.1.5-.1.7V17H10.7s.1-7.4 0-8.2h2.5v1.2c.3-.5 1-1.4 2.4-1.4 1.8 0 3 1.2 3 3.6V17z" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <nav class="footer__cols" aria-label="Rodapé">
+      <div class="footer__col">
+        <h4>Produto</h4>
+        <a href="#recursos">Recursos</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#demo">Demo</a>
+        <a href="#precos">Preços</a>
+      </div>
+      <div class="footer__col">
+        <h4>Engenharia</h4>
+        <a href="#tech">Stack técnica</a>
+        <a href="https://github.com/Pcamargoz" target="_blank" rel="noopener">GitHub</a>
+        <a href="#tech">Arquitetura</a>
+        <a href="#tech">API REST</a>
+      </div>
+      <div class="footer__col">
+        <h4>Empresa</h4>
+        <a href="#">Sobre</a>
+        <a href="#">Blog</a>
+        <a href="#">Contato</a>
+        <a href="https://www.linkedin.com/in/pedro-carmargo01" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <a href="#">Termos</a>
+        <a href="#">Privacidade</a>
+        <a href="#">Cookies</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="footer__bottom">
+    <span>© 2026 CultivaClub. Construído com obsessão por detalhes.</span>
+    <span class="footer__status">
+      <span class="status-dot"></span>
+      Todos os sistemas operacionais
+    </span>
+  </div>
+
+  <div class="footer__big" aria-hidden="true">cultivaclub</div>
+</footer>
+
+<script src="assets/main.js" defer></script>
+</body>
+</html>
