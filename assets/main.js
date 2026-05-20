@@ -48,7 +48,7 @@
     '.capa, .entry, .certs, .project, .contato__bigtext, .contact-card, ' +
     '.projetos__intro, .stack__intro, .atuacao__intro, .atuacao__card, ' +
     '.contact-card--featured, .certs-feature__intro, .cert-card, ' +
-    '.cert-extra, .traj__see-certs, .arch'
+    '.cert-extra, .traj__see-certs, .arch, .wip-banner'
   );
   targets.forEach((t, i) => {
     t.classList.add('in-view-target');
