@@ -1334,6 +1334,56 @@ body:has(.cursor.is-hover) .cursor-dot { opacity: 0; }
 }
 
 /* =============================================================
+   CRITICAL FIX — prevent grid items from overflowing viewport
+   CSS Grid items have implicit min-width: auto (= min-content),
+   so children with min-width (like the architecture SVG) were
+   expanding the grid cell wider than the viewport — getting
+   clipped by body's overflow-x: hidden and breaking the layout
+   of the description text. min-width: 0 fixes this everywhere.
+   ============================================================= */
+.project,
+.project--rev,
+.project--wip,
+.project > *,
+.project--rev > *,
+.project--wip > * {
+  min-width: 0;
+}
+
+.project__desc,
+.project__desc-lead,
+.project__desc-body,
+.project__insight,
+.project__insight p,
+.project__title,
+.project__media,
+.project__media-frame,
+.project__galeria,
+.project__galeria--arch,
+.arch,
+.arch__svg-wrap {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.project__desc-lead,
+.project__desc-body,
+.project__insight p,
+.project__title {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Architecture: SVG scrolls horizontally inside its own contained wrap,
+   never propagating to the project article or page. */
+.arch__svg-wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* =============================================================
    MOBILE REFINEMENTS — Projetos · Contato · Footer
    Compact, readable, balanced on phones and small tablets.
    ============================================================= */
