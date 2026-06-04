@@ -31,7 +31,13 @@
 <!-- Top nav -->
 <header class="nav" id="nav">
   <a href="#top" class="nav__mark" aria-label="Início">
-    <span class="nav__mark-glyph">P</span>
+    <span class="nav__mark-glyph">
+      <span class="nav__mark-initial" aria-hidden="true">P</span>
+      <!-- Salve sua foto como assets/pedro.jpg e ela substitui o "P" automaticamente.
+           Se o arquivo não existir, o onerror remove a img e o "P" continua aparecendo. -->
+      <img class="nav__mark-photo" src="assets/pedro.jpg" alt="Pedro César" decoding="async"
+           onerror="this.remove()" />
+    </span>
     <span class="nav__mark-text">pedro&nbsp;<em>césar</em></span>
   </a>
   <nav class="nav__links" aria-label="Navegação principal">
