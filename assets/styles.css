@@ -2573,3 +2573,213 @@ body:has(.cursor.is-hover) .cursor-dot { opacity: 0; }
   .arch { padding: 24px 18px; }
   .arch__svg { min-width: 780px; }
 }
+
+/* =============================================================
+   PROJETO 02 — NEO ENERGY · tema "AZUL OCEANO"
+   Quebra de paleta proposital — escopo 100% isolado em .project--neo.
+   A maior parte é re-tematizada sobrescrevendo as custom properties
+   só dentro deste card; o restante são os literais rgba() de cobre.
+   ============================================================= */
+.project--neo {
+  /* paleta oceano — herdada por todos os filhos deste card */
+  --ink:       #EAF6FF;   /* texto principal — branco gelo */
+  --ink-soft:  #A7C6DC;   /* texto secundário — azul nebuloso */
+  --mute:      #5F7E96;   /* labels/captions */
+  --line:      #1E3A52;   /* bordas */
+  --bg-2:      #0E1C30;   /* superfícies internas */
+  --accent:    #38D6F0;   /* ciano vivo — destaque (igual ao dashboard) */
+  --accent-2:  #2C8FE0;   /* azul oceano */
+
+  border: 1px solid #1E3A52;
+  border-radius: 20px;
+  padding: clamp(26px, 4vw, 56px);
+  background:
+    radial-gradient(1100px 460px at 82% -8%, rgba(56,214,240,0.14), transparent 62%),
+    radial-gradient(820px 520px at -6% 108%, rgba(44,143,224,0.12), transparent 60%),
+    linear-gradient(180deg, #0A1322 0%, #0B1728 100%);
+  box-shadow:
+    0 50px 130px -56px rgba(26,120,180,0.60),
+    inset 0 0 0 1px rgba(120,220,255,0.05);
+  isolation: isolate;
+}
+
+/* fio de luz ciano na borda superior do card */
+.project--neo::before {
+  content: "";
+  position: absolute;
+  left: -1px; right: -1px; top: -1px;
+  height: 2px;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(90deg, transparent, #38D6F0 25%, #2C8FE0 75%, transparent);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* --- literais rgba() de cobre que não usam var(--accent) --- */
+.project--neo .project__insight {
+  background: linear-gradient(90deg, rgba(56,214,240,0.10), rgba(56,214,240,0) 85%);
+}
+.project--neo .project__tech li { background: rgba(56,214,240,0.06); }
+
+.project--neo .project__media-frame {
+  border-style: solid;            /* anula o tracejado de cobre do estado WIP */
+  border-color: #1E3A52;
+}
+.project--neo .project__media-frame:hover { border-color: #38D6F0; }
+.project--neo .project__media-frame::before {
+  background:
+    linear-gradient(135deg, rgba(56,214,240,0.08), transparent 50%),
+    repeating-linear-gradient(45deg,
+      rgba(200,240,255,0.025) 0 1px,
+      transparent 1px 14px) !important;
+}
+
+.project--neo .btn--ghost:hover {
+  border-color: #38D6F0;
+  background: rgba(56,214,240,0.08);
+}
+
+.project--neo .project__desc code,
+.project--neo .project__insight code {
+  border-color: #1E3A52;
+  background: rgba(56,214,240,0.06);
+}
+
+/* --- WIP banner re-tematizado em azul oceano --- */
+.project--neo .wip-banner {
+  border-color: rgba(56,214,240,0.42);
+  background:
+    linear-gradient(135deg, rgba(56,214,240,0.16) 0%, rgba(56,214,240,0.06) 40%, transparent 70%),
+    linear-gradient(0deg, #0E1C30, #0E1C30);
+  box-shadow:
+    0 18px 50px -20px rgba(44,143,224,0.45),
+    inset 0 0 0 1px rgba(200,240,255,0.03);
+}
+.project--neo .wip-banner::before {
+  background-image: repeating-linear-gradient(135deg,
+    rgba(56,214,240,0.07) 0 14px,
+    transparent 14px 32px);
+}
+.project--neo .wip-banner__pulse { box-shadow: 0 0 0 4px rgba(56,214,240,0.18); }
+.project--neo .wip-banner__chip {
+  border-color: rgba(56,214,240,0.42);
+  background: rgba(56,214,240,0.07);
+}
+
+/* --- lista de entregas "O que entregamos" --- */
+.neo-features {
+  list-style: none;
+  margin: 2px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 11px;
+}
+.neo-features li {
+  position: relative;
+  padding-left: 26px;
+  font-family: var(--sans);
+  font-size: clamp(14px, 1.05vw, 15px);
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.neo-features li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-weight: 600;
+}
+
+/* --- bloco de demonstração em vídeo (faixa + área reservada) --- */
+.neo-demo {
+  grid-area: galeria;
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-2);
+}
+.neo-demo__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px clamp(14px, 2vw, 20px);
+  background: linear-gradient(90deg, rgba(56,214,240,0.12), rgba(44,143,224,0.04));
+  border-bottom: 1px solid var(--line);
+}
+.neo-demo__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.neo-demo__label svg { color: var(--accent); flex-shrink: 0; }
+.neo-demo__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border: 1px solid rgba(56,214,240,0.5);
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(56,214,240,0.08);
+  white-space: nowrap;
+}
+.neo-demo__badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(56,214,240,0.20);
+  animation: neo-blink 1.8s ease-in-out infinite;
+}
+@keyframes neo-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.3; }
+}
+.neo-demo__frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(600px 300px at 50% 0%, rgba(56,214,240,0.07), transparent 60%),
+    #0A1322;
+}
+.neo-demo__frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg,
+    rgba(200,240,255,0.02) 0 1px,
+    transparent 1px 16px);
+  pointer-events: none;
+}
+.neo-demo__frame iframe,
+.neo-demo__frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.neo-demo__frame:has(iframe)::before,
+.neo-demo__frame:has(video)::before { display: none; }
+
+/* --- responsivo do card NEO --- */
+@media (max-width: 700px) {
+  .project--neo { padding: 22px 16px; border-radius: 14px; }
+  .neo-demo__bar { flex-wrap: wrap; gap: 10px; }
+}

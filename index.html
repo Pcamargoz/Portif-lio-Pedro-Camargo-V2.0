@@ -922,20 +922,20 @@
       </div>
     </article>
 
-    <!-- ============ PROJETO 02 ============ -->
-    <article class="project project--rev project--wip" data-project="02">
+    <!-- ============ PROJETO 02 — NEO ENERGY ============ -->
+    <article class="project project--rev project--wip project--neo" data-project="02">
 
-      <!-- WIP banner -->
+      <!-- WIP banner — tema oceano · vídeo de demonstração em produção -->
       <div class="wip-banner" role="status" aria-live="polite">
         <div class="wip-banner__left">
           <span class="wip-banner__pulse" aria-hidden="true"></span>
           <div class="wip-banner__text">
             <span class="wip-banner__title">EM&nbsp;DESENVOLVIMENTO</span>
-            <span class="wip-banner__sub">Projeto em construção — disponível em breve</span>
+            <span class="wip-banner__sub">Vídeo de demonstração em produção — aplicação já no ar</span>
           </div>
         </div>
         <div class="wip-banner__right" aria-hidden="true">
-          <span class="wip-banner__chip">WIP · v0.1</span>
+          <span class="wip-banner__chip">LIVE · v1.0</span>
           <span class="wip-banner__stripes"></span>
         </div>
       </div>
@@ -946,56 +946,104 @@
       </div>
 
       <div class="project__meta">
-        <span class="kicker">Em breve</span>
-        <span class="kicker kicker--muted">Full-stack · ERP</span>
+        <span class="kicker">No ar · Acadêmico (UPX)</span>
+        <span class="kicker kicker--muted">Full-stack · Smart Home · Energia</span>
       </div>
 
       <h3 class="project__title">
-        Título do Projeto&nbsp;02
+        NEO&nbsp;Energy
       </h3>
 
-      <p class="project__desc">
-        Espaço reservado para a descrição deste segundo projeto. Use este parágrafo
-        para apresentar o contexto, o escopo técnico, as decisões de arquitetura e os
-        impactos gerados. Pronto para receber também links de demo, repositório e
-        estudo de caso técnico.
-      </p>
+      <div class="project__desc">
+        <p class="project__desc-lead">
+          🚀 O <strong>NEO-ENERGY</strong> é um sistema de gestão inteligente de
+          <em>energia renovável</em> e <em>irrigação automática</em> para residências — o
+          morador tem controle total sobre o consumo de água no jardim e a geração de
+          energia solar, tudo em um só lugar.
+        </p>
+
+        <p class="project__desc-body">
+          Projeto desenvolvido na disciplina <strong>UPX</strong> da faculdade, fruto de
+          meses de dedicação e tecnologia aplicada com propósito. Por trás do dashboard roda
+          uma <strong>API REST em Java 21 + Spring Boot</strong>, com deploy em nuvem via
+          <strong>Docker no Render</strong>, segurança <strong>BCrypt + JWT</strong> e três
+          perfis de acesso — <strong>ADMIN</strong>, <strong>NORMAL</strong> e
+          <strong>PRO</strong>.
+        </p>
+
+        <ul class="neo-features">
+          <li>Monitoramento de painéis solares em tempo real</li>
+          <li>Gestão de irrigadores com registro automático de sessões (tempo&nbsp;+&nbsp;litros)</li>
+          <li>Histórico completo de água e energia para decisões mais inteligentes</li>
+          <li>Dashboard moderno com automações, alertas e controle total</li>
+          <li>Segurança BCrypt&nbsp;+&nbsp;JWT com três perfis: ADMIN, NORMAL e PRO</li>
+        </ul>
+
+        <aside class="project__insight">
+          <span class="kicker kicker--accent">NOTA DO AUTOR · LIDERANÇA</span>
+          <p>
+            Infelizmente não pude estar presente na apresentação ao lado da minha equipe —
+            algo que pesa muito para mim como líder do grupo. Mas o trabalho está feito,
+            está no ar e fala por si só. 🌱☀️💧
+          </p>
+        </aside>
+      </div>
 
       <ul class="project__tech">
-        <li>Tag&nbsp;1</li><li>Tag&nbsp;2</li><li>Tag&nbsp;3</li><li>Tag&nbsp;4</li>
+        <li>Java 21</li>
+        <li>Spring Boot</li>
+        <li>Spring Security</li>
+        <li>JWT</li>
+        <li>JPA</li>
+        <li>PostgreSQL</li>
+        <li>Docker</li>
+        <li>MapStruct</li>
+        <li>Lombok</li>
+        <li>Maven</li>
       </ul>
 
       <figure class="project__media">
         <div class="project__media-frame" data-media-slot>
-          <div class="media-placeholder">
-            <svg viewBox="0 0 24 24" width="42" height="42" aria-hidden="true"><path d="M5 4l14 8-14 8V4z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
-            <span>Espaço reservado para vídeo, imagem ou capa</span>
-            <code>iframe · video · img</code>
-          </div>
+          <img src="assets/neo-energy.png"
+               alt="Resumo visual do NEO ENERGY — dashboard de energia solar, irrigação inteligente e histórico de atividades"
+               loading="lazy" />
         </div>
         <figcaption class="project__caption">
-          <span>Fig. 02 · Substitua este espaço pela mídia principal do projeto.</span>
+          <span>Fig. 02 · Resumo do NEO ENERGY — geração solar, irrigação inteligente e histórico, em tempo real.</span>
         </figcaption>
       </figure>
 
-      <div class="project__galeria">
-        <div class="project__thumb" data-media-slot></div>
-        <div class="project__thumb" data-media-slot></div>
-        <div class="project__thumb" data-media-slot></div>
+      <!-- Demonstração em vídeo — área reservada com faixa "em desenvolvimento" -->
+      <div class="neo-demo">
+        <div class="neo-demo__bar">
+          <span class="neo-demo__label">
+            <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4l14 8-14 8V4z" fill="currentColor"/></svg>
+            Demonstração em vídeo
+          </span>
+          <span class="neo-demo__badge">
+            <span class="neo-demo__badge-dot" aria-hidden="true"></span>
+            Em desenvolvimento
+          </span>
+        </div>
+        <!-- Quando o vídeo (não listado do YouTube) estiver pronto, troque o conteúdo
+             abaixo por: <iframe src="https://www.youtube.com/embed/SEU_ID?rel=0&modestbranding=1" ...></iframe> -->
+        <div class="neo-demo__frame" data-media-slot>
+          <div class="media-placeholder">
+            <svg viewBox="0 0 24 24" width="44" height="44" aria-hidden="true"><path d="M5 4l14 8-14 8V4z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+            <span>Vídeo de demonstração — em breve aqui</span>
+            <code>youtube · não listado</code>
+          </div>
+        </div>
       </div>
 
       <div class="project__links">
-        <a class="btn btn--ghost btn--sm" href="#" target="_blank" rel="noopener">
-          <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1 .8-.2 1.7-.3 2.5-.3s1.7.1 2.5.3c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.3 6.8-5.1 6.8-9.6C22 6.6 17.5 2 12 2z" fill="currentColor"/></svg>
-          GitHub
-        </a>
-        <a class="btn btn--ghost btn--sm" href="#" target="_blank" rel="noopener">
+        <a class="btn btn--ghost btn--sm" href="https://front-end-neo-energy.vercel.app/" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9M10 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          Live demo
+          Aplicação ao vivo
         </a>
-        <a class="btn btn--ghost btn--sm" href="#" target="_blank" rel="noopener">
-          <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm-3 9h-4v4h-1v-4H7v-1h4V8h1v4h4v1z" fill="currentColor"/></svg>
-          Estudo de caso
+        <a class="btn btn--ghost btn--sm" href="https://github.com/Pcamargoz/NeoEnergy---Facens" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1 .8-.2 1.7-.3 2.5-.3s1.7.1 2.5.3c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 4-1.3 6.8-5.1 6.8-9.6C22 6.6 17.5 2 12 2z" fill="currentColor"/></svg>
+          Back-end no GitHub
         </a>
       </div>
     </article>
