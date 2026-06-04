@@ -2583,66 +2583,171 @@ body:has(.cursor.is-hover) .cursor-dot { opacity: 0; }
 .project--neo {
   /* paleta oceano — herdada por todos os filhos deste card */
   --ink:       #EAF6FF;   /* texto principal — branco gelo */
-  --ink-soft:  #A7C6DC;   /* texto secundário — azul nebuloso */
-  --mute:      #5F7E96;   /* labels/captions */
-  --line:      #1E3A52;   /* bordas */
-  --bg-2:      #0E1C30;   /* superfícies internas */
-  --accent:    #38D6F0;   /* ciano vivo — destaque (igual ao dashboard) */
-  --accent-2:  #2C8FE0;   /* azul oceano */
+  --ink-soft:  #AEC9DE;   /* texto secundário — azul nebuloso */
+  --mute:      #6488A2;   /* labels/captions */
+  --line:      #214462;   /* bordas */
+  --bg-2:      #0C1B30;   /* superfícies internas */
+  --accent:    #3FE0F2;   /* ciano elétrico — destaque (identidade NEO) */
+  --accent-2:  #2E8BFF;   /* azul oceano vivo */
 
-  border: 1px solid #1E3A52;
-  border-radius: 20px;
-  padding: clamp(26px, 4vw, 56px);
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 22px;
+  padding: clamp(26px, 4vw, 58px);
+  /* camadas: aurora interna (padding-box) + borda luminosa em gradiente (border-box) */
   background:
-    radial-gradient(1100px 460px at 82% -8%, rgba(56,214,240,0.14), transparent 62%),
-    radial-gradient(820px 520px at -6% 108%, rgba(44,143,224,0.12), transparent 60%),
-    linear-gradient(180deg, #0A1322 0%, #0B1728 100%);
+    radial-gradient(1200px 520px at 84% -10%, rgba(63,224,242,0.16), transparent 60%) padding-box,
+    radial-gradient(900px 620px at -8% 112%, rgba(46,139,255,0.16), transparent 60%) padding-box,
+    radial-gradient(760px 520px at 50% 128%, rgba(99,102,241,0.10), transparent 60%) padding-box,
+    linear-gradient(165deg, #0B1A30 0%, #081427 46%, #060F20 100%) padding-box,
+    linear-gradient(135deg, rgba(63,224,242,0.65), rgba(46,139,255,0.16) 42%, rgba(99,102,241,0.45) 100%) border-box;
   box-shadow:
-    0 50px 130px -56px rgba(26,120,180,0.60),
-    inset 0 0 0 1px rgba(120,220,255,0.05);
+    0 60px 140px -60px rgba(20,120,200,0.65),
+    0 8px 40px -24px rgba(63,224,242,0.28),
+    inset 0 1px 0 rgba(190,240,255,0.10),
+    inset 0 0 60px -30px rgba(63,224,242,0.20);
   isolation: isolate;
+  overflow: hidden;
+  transition: box-shadow .6s ease;
+}
+.project--neo:hover {
+  box-shadow:
+    0 70px 150px -58px rgba(20,130,210,0.78),
+    0 12px 50px -22px rgba(63,224,242,0.42),
+    inset 0 1px 0 rgba(190,240,255,0.14),
+    inset 0 0 72px -30px rgba(63,224,242,0.28);
 }
 
-/* fio de luz ciano na borda superior do card */
+/* reflexo de luz diagonal — varredura lenta e sutil (vidro premium) */
 .project--neo::before {
   content: "";
   position: absolute;
-  left: -1px; right: -1px; top: -1px;
-  height: 2px;
-  border-radius: 20px 20px 0 0;
-  background: linear-gradient(90deg, transparent, #38D6F0 25%, #2C8FE0 75%, transparent);
-  opacity: 0.85;
+  inset: 0;
+  z-index: -1;
   pointer-events: none;
+  background: linear-gradient(115deg,
+    transparent 38%,
+    rgba(190,240,255,0.07) 47%,
+    rgba(255,255,255,0.035) 50%,
+    rgba(190,240,255,0.06) 53%,
+    transparent 62%);
+  background-size: 280% 100%;
+  background-position: 120% 0;
+  animation: neo-sheen 16s ease-in-out infinite;
+}
+@keyframes neo-sheen {
+  0%, 100% { background-position: 120% 0; }
+  50%      { background-position: -20% 0; }
 }
 
-/* --- literais rgba() de cobre que não usam var(--accent) --- */
+/* malha técnica (blueprint) — esmaece suavemente no canto superior */
+.project--neo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(120,200,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120,200,255,0.04) 1px, transparent 1px);
+  background-size: 46px 46px;
+  -webkit-mask-image: radial-gradient(130% 95% at 72% -8%, #000 0%, transparent 68%);
+          mask-image: radial-gradient(130% 95% at 72% -8%, #000 0%, transparent 68%);
+  opacity: 0.6;
+}
+
+/* título — preenchimento em gradiente gelo→ciano + leve glow */
+.project--neo .project__title {
+  background: linear-gradient(180deg, #F2FCFF 0%, #D2F0FA 52%, #A9E2F4 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 22px rgba(63,224,242,0.18));
+}
+
+/* índice "02" — neon controlado */
+.project--neo .project__index-num {
+  text-shadow:
+    0 0 30px rgba(63,224,242,0.45),
+    0 0 60px rgba(46,139,255,0.22);
+}
+
+/* insight — painel de vidro fosco com borda luminosa à esquerda */
 .project--neo .project__insight {
-  background: linear-gradient(90deg, rgba(56,214,240,0.10), rgba(56,214,240,0) 85%);
+  background: linear-gradient(100deg, rgba(63,224,242,0.12), rgba(46,139,255,0.04) 56%, transparent 92%);
+  -webkit-backdrop-filter: blur(10px) saturate(135%);
+          backdrop-filter: blur(10px) saturate(135%);
+  border-radius: 0 12px 12px 0;
+  box-shadow:
+    inset 0 1px 0 rgba(190,240,255,0.10),
+    -8px 0 30px -22px rgba(63,224,242,0.55);
 }
-.project--neo .project__tech li { background: rgba(56,214,240,0.06); }
+.project--neo .project__insight .kicker { text-shadow: 0 0 16px rgba(63,224,242,0.4); }
 
+/* tags — pílulas de vidro com realce no hover */
+.project--neo .project__tech li {
+  background: linear-gradient(180deg, rgba(63,224,242,0.10), rgba(46,139,255,0.04));
+  border-color: rgba(120,200,255,0.18);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  box-shadow: inset 0 1px 0 rgba(190,240,255,0.10);
+  transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+}
+.project--neo .project__tech li:hover {
+  border-color: rgba(63,224,242,0.55);
+  box-shadow: inset 0 1px 0 rgba(190,240,255,0.18), 0 0 18px -6px rgba(63,224,242,0.6);
+  transform: translateY(-1px);
+}
+
+/* moldura da mídia — superfície premium com profundidade e glow no hover */
 .project--neo .project__media-frame {
   border-style: solid;            /* anula o tracejado de cobre do estado WIP */
-  border-color: #1E3A52;
+  border-color: rgba(120,200,255,0.20);
+  background: linear-gradient(160deg, #0C1F38, #081428);
+  box-shadow:
+    0 30px 70px -40px rgba(20,120,200,0.7),
+    inset 0 1px 0 rgba(190,240,255,0.10);
+  transition: border-color .5s ease, box-shadow .6s ease, transform .6s cubic-bezier(.2,.7,.2,1);
 }
-.project--neo .project__media-frame:hover { border-color: #38D6F0; }
+.project--neo .project__media-frame:hover {
+  border-color: rgba(63,224,242,0.6);
+  transform: translateY(-3px);
+  box-shadow:
+    0 44px 90px -40px rgba(20,140,220,0.85),
+    0 0 0 1px rgba(63,224,242,0.4),
+    0 0 44px -10px rgba(63,224,242,0.45),
+    inset 0 1px 0 rgba(190,240,255,0.14);
+}
 .project--neo .project__media-frame::before {
   background:
-    linear-gradient(135deg, rgba(56,214,240,0.08), transparent 50%),
-    repeating-linear-gradient(45deg,
-      rgba(200,240,255,0.025) 0 1px,
-      transparent 1px 14px) !important;
+    linear-gradient(135deg, rgba(63,224,242,0.10), transparent 46%),
+    linear-gradient(0deg, rgba(6,15,32,0.40), transparent 32%) !important;
 }
+.project--neo .project__media-frame:has(img)::before { display: none !important; }
 
+/* botões — vidro discreto, glow no hover */
+.project--neo .btn--ghost {
+  border-color: rgba(120,200,255,0.22);
+  background: rgba(120,200,255,0.03);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+}
 .project--neo .btn--ghost:hover {
-  border-color: #38D6F0;
-  background: rgba(56,214,240,0.08);
+  border-color: rgba(63,224,242,0.7);
+  background: rgba(63,224,242,0.10);
+  color: #F2FCFF;
+  box-shadow: 0 0 26px -6px rgba(63,224,242,0.55), inset 0 1px 0 rgba(190,240,255,0.12);
 }
 
 .project--neo .project__desc code,
 .project--neo .project__insight code {
-  border-color: #1E3A52;
-  background: rgba(56,214,240,0.06);
+  border-color: rgba(120,200,255,0.20);
+  background: rgba(63,224,242,0.07);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project--neo::before { animation: none; }
 }
 
 /* --- lista de entregas "O que entregamos" --- */
@@ -2669,25 +2774,32 @@ body:has(.cursor.is-hover) .cursor-dot { opacity: 0; }
   color: var(--accent);
   font-family: var(--mono);
   font-weight: 600;
+  text-shadow: 0 0 12px rgba(63,224,242,0.6);
 }
 
 /* --- bloco de demonstração em vídeo (faixa + área reservada) --- */
 .neo-demo {
   grid-area: galeria;
   margin-top: 16px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
+  border: 1px solid rgba(120,200,255,0.18);
+  border-radius: 16px;
   overflow: hidden;
-  background: var(--bg-2);
+  background: linear-gradient(165deg, rgba(14,33,56,0.62), rgba(8,20,40,0.62));
+  -webkit-backdrop-filter: blur(10px) saturate(130%);
+          backdrop-filter: blur(10px) saturate(130%);
+  box-shadow:
+    0 34px 80px -46px rgba(20,120,200,0.6),
+    inset 0 1px 0 rgba(190,240,255,0.08);
 }
 .neo-demo__bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 12px clamp(14px, 2vw, 20px);
-  background: linear-gradient(90deg, rgba(56,214,240,0.12), rgba(44,143,224,0.04));
-  border-bottom: 1px solid var(--line);
+  padding: 13px clamp(14px, 2vw, 22px);
+  background: linear-gradient(90deg, rgba(63,224,242,0.16), rgba(46,139,255,0.05) 70%, transparent);
+  border-bottom: 1px solid rgba(120,200,255,0.14);
+  box-shadow: inset 0 1px 0 rgba(190,240,255,0.08);
 }
 .neo-demo__label {
   display: inline-flex;
@@ -2699,7 +2811,11 @@ body:has(.cursor.is-hover) .cursor-dot { opacity: 0; }
   text-transform: uppercase;
   color: var(--ink);
 }
-.neo-demo__label svg { color: var(--accent); flex-shrink: 0; }
+.neo-demo__label svg {
+  color: var(--accent);
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(63,224,242,0.55));
+}
 .neo-demo__badge {
   display: inline-flex;
   align-items: center;
@@ -2710,10 +2826,11 @@ body:has(.cursor.is-hover) .cursor-dot { opacity: 0; }
   letter-spacing: 0.2em;
   text-transform: uppercase;
   padding: 6px 12px;
-  border: 1px solid rgba(56,214,240,0.5);
+  border: 1px solid rgba(63,224,242,0.5);
   border-radius: 999px;
   color: var(--accent);
-  background: rgba(56,214,240,0.08);
+  background: rgba(63,224,242,0.08);
+  box-shadow: inset 0 0 12px -4px rgba(63,224,242,0.45), 0 0 16px -8px rgba(63,224,242,0.6);
   white-space: nowrap;
 }
 .neo-demo__badge-dot {
@@ -2721,7 +2838,7 @@ body:has(.cursor.is-hover) .cursor-dot { opacity: 0; }
   height: 7px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 3px rgba(56,214,240,0.20);
+  box-shadow: 0 0 0 3px rgba(63,224,242,0.20), 0 0 12px rgba(63,224,242,0.85);
   animation: neo-blink 1.8s ease-in-out infinite;
 }
 @keyframes neo-blink {
@@ -2756,6 +2873,17 @@ body:has(.cursor.is-hover) .cursor-dot { opacity: 0; }
 }
 .neo-demo__frame:has(iframe)::before,
 .neo-demo__frame:has(video)::before { display: none; }
+
+/* --- foto do projeto maior (desktop): a mídia ganha a coluna larga --- */
+@media (min-width: 901px) {
+  .project--neo {
+    grid-template-columns: 1.5fr 1fr;
+  }
+  .project--neo .project__media-frame {
+    aspect-ratio: 16 / 11;
+  }
+  .project--neo .project__media-frame img { object-fit: cover; }
+}
 
 /* --- responsivo do card NEO --- */
 @media (max-width: 700px) {
