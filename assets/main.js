@@ -49,7 +49,12 @@
     '.projetos__intro, .stack__intro, .atuacao__intro, .atuacao__card, ' +
     '.contact-card--featured, .certs-feature__intro, .cert-card, ' +
     '.cert-extra, .traj__see-certs, .arch, .wip-banner, ' +
-    '.project__desc-lead, .project__desc-body, .project__insight'
+    '.project__desc-lead, .project__desc-body, .project__insight, ' +
+    // Projeto 02 (NEO): cada bloco revela quando entra na viewport
+    '.project--neo .project__index, .project--neo .project__meta, ' +
+    '.project--neo .project__title, .project--neo .project__media, ' +
+    '.project--neo .project__tech, .project--neo .neo-demo, ' +
+    '.project--neo .project__links'
   );
   targets.forEach((t, i) => {
     t.classList.add('in-view-target');

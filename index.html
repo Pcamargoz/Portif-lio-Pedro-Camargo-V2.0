@@ -1002,6 +1002,13 @@
         <figcaption class="project__caption">
           <span>Fig. 02 · Resumo do NEO ENERGY — geração solar, irrigação inteligente e histórico, em tempo real.</span>
         </figcaption>
+
+        <!-- Logo do projeto — preenche o espaço da coluna. Salve em assets/neo-energy-logo.png.
+             Se o arquivo não existir, o onerror remove o bloco (sem imagem quebrada). -->
+        <div class="neo-logo">
+          <img src="assets/neo-energy-logo.png" alt="Logo NEO ENERGY — energia que movimenta o futuro"
+               loading="lazy" decoding="async" onerror="this.closest('.neo-logo').remove()" />
+        </div>
       </figure>
 
       <!-- Demonstração em vídeo — área reservada com faixa "em desenvolvimento" -->

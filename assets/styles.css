@@ -2888,6 +2888,36 @@ body:has(.cursor.is-hover) .cursor-dot { opacity: 0; }
 .neo-demo__frame:has(iframe)::before,
 .neo-demo__frame:has(video)::before { display: none; }
 
+/* --- logo do projeto — preenche o vazio da coluna de mídia --- */
+.neo-logo {
+  position: relative;
+  flex: 1 1 auto;          /* ocupa o espaço que sobra abaixo da capa */
+  min-height: 200px;
+  display: grid;
+  place-items: center;
+  padding: clamp(20px, 3.5vw, 48px) 8px 8px;
+}
+.neo-logo::before {           /* halo de luz atrás da logo (sem filter, leve) */
+  content: "";
+  position: absolute;
+  inset: 0 -2%;
+  background: radial-gradient(60% 60% at 50% 46%,
+    rgba(63,224,242,0.22),
+    rgba(46,139,255,0.08) 48%,
+    transparent 72%);
+  pointer-events: none;
+  z-index: 0;
+}
+.neo-logo img {
+  position: relative;
+  z-index: 1;
+  width: min(86%, 340px);
+  height: auto;
+  filter: drop-shadow(0 20px 46px rgba(20,120,200,0.50));
+  transition: transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.neo-logo:hover img { transform: scale(1.03); }
+
 /* --- foto do projeto maior (desktop): a mídia ganha a coluna larga --- */
 @media (min-width: 901px) {
   .project--neo {
@@ -2906,64 +2936,26 @@ body:has(.cursor.is-hover) .cursor-dot { opacity: 0; }
 }
 
 /* =============================================================
-   PROJETO 02 — entrada em cascata ao rolar (reaproveita o IO de main.js,
-   que já adiciona .in-view-target/.in-view ao <article class="project">).
-   Só transform/opacity → composição na GPU, sem custo de scroll.
+   PROJETO 02 — reveal POR BLOCO ao rolar.
+   O card é mais alto que a viewport, então revelar tudo de uma vez
+   faz as partes de baixo terminarem antes do usuário chegar nelas.
+   Solução: main.js observa cada bloco do NEO individualmente, e cada
+   um surge quando ELE entra na tela. Só transform/opacity (GPU).
    ============================================================= */
-/* o card faz só o fade (sem o deslocamento pesado do reveal genérico);
-   quem sobe em cascata são os blocos internos */
-.project--neo.in-view-target { transform: none; }
-
-/* os filhos do desc (que também são alvos genéricos) sobem junto com o
-   container .project__desc — neutraliza o reveal individual deles aqui */
-.project--neo .project__desc-lead.in-view-target,
-.project--neo .project__desc-body.in-view-target,
-.project--neo .project__insight.in-view-target {
+/* o card em si não anima — o frame fica sempre presente; quem revela
+   são os blocos internos, conforme entram na viewport */
+.project--neo.in-view-target {
   opacity: 1;
   transform: none;
   transition: none;
 }
 
-.project--neo .project__index,
-.project--neo .project__meta,
-.project--neo .project__title,
-.project--neo .project__media,
-.project--neo .project__desc,
-.project--neo .project__tech,
-.project--neo .neo-demo,
-.project--neo .project__links {
-  transform: translate3d(0, 32px, 0);
-  transition: transform .72s cubic-bezier(.22,.61,.21,1);
+/* timing/distância refinados p/ os blocos do NEO (sobrescreve o genérico) */
+.project--neo .in-view-target {
+  transform: translate3d(0, 30px, 0);
+  transition: opacity .7s cubic-bezier(.22,.61,.21,1),
+              transform .7s cubic-bezier(.22,.61,.21,1);
 }
-.project--neo.in-view .project__index,
-.project--neo.in-view .project__meta,
-.project--neo.in-view .project__title,
-.project--neo.in-view .project__media,
-.project--neo.in-view .project__desc,
-.project--neo.in-view .project__tech,
-.project--neo.in-view .neo-demo,
-.project--neo.in-view .project__links {
+.project--neo .in-view-target.in-view {
   transform: none;
-}
-/* cascata */
-.project--neo.in-view .project__meta  { transition-delay: .04s; }
-.project--neo.in-view .project__index { transition-delay: .04s; }
-.project--neo.in-view .project__title { transition-delay: .10s; }
-.project--neo.in-view .project__media { transition-delay: .16s; }
-.project--neo.in-view .project__desc  { transition-delay: .22s; }
-.project--neo.in-view .project__tech  { transition-delay: .28s; }
-.project--neo.in-view .neo-demo       { transition-delay: .34s; }
-.project--neo.in-view .project__links { transition-delay: .40s; }
-
-@media (prefers-reduced-motion: reduce) {
-  .project--neo .project__index,
-  .project--neo .project__meta,
-  .project--neo .project__title,
-  .project--neo .project__media,
-  .project--neo .project__desc,
-  .project--neo .project__tech,
-  .project--neo .neo-demo,
-  .project--neo .project__links {
-    transform: none;
-  }
 }
