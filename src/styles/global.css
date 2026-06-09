@@ -9,6 +9,9 @@
 
 html { scroll-behavior: smooth; }
 
+/* Âncoras não devem ficar escondidas atrás da nav fixa (~68px) */
+:where([id]) { scroll-margin-top: 96px; }
+
 html, body {
   margin: 0;
   padding: 0;
