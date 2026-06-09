@@ -16,6 +16,11 @@ build/
 .env
 .env.local
 
+# TypeScript build artifacts
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+
 # Vercel
 .vercel
 
