@@ -1,0 +1,40 @@
+/* Item de estatística — portado de .stat do legado (styles.css). */
+.stat {
+  padding: 36px 28px;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+}
+.stat__row {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+.stat__num {
+  font-family: var(--serif);
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+}
+.stat__unit {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.4vw, 32px);
+  color: var(--accent);
+  font-style: italic;
+  line-height: 1.1;
+  padding-top: 0.1em;
+}
+.stat__unit:empty { display: none; }
+.stat__label {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+  max-width: 26ch;
+  margin-top: auto;
+}

@@ -1,0 +1,60 @@
+/* Faixa marquee — portado de .marquee do legado (styles.css). */
+.marquee {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+  background: linear-gradient(180deg, rgba(227,123,62,0.04), rgba(14,13,11,0));
+  pointer-events: none;
+  margin-top: -1px;
+}
+.marquee::before,
+.marquee::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: clamp(60px, 12vw, 180px);
+  z-index: 2;
+  pointer-events: none;
+}
+.marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg), transparent);
+}
+.marquee::after {
+  right: 0;
+  background: linear-gradient(-90deg, var(--bg), transparent);
+}
+.marquee__track {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  white-space: nowrap;
+  animation: marquee 50s linear infinite;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(28px, 4vw, 52px);
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+  width: max-content;
+}
+.marquee__track span { white-space: nowrap; }
+.marquee__track .dotmark {
+  color: var(--accent);
+  font-style: normal;
+  font-size: 0.4em;
+  transform: translateY(-0.2em);
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none; }
+}

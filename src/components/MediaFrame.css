@@ -1,0 +1,92 @@
+/* Moldura de mídia de projeto — portado de .project__media do legado (styles.css). */
+.project__media {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  max-width: 100%;
+}
+.project__media-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  transition: border-color .4s ease, transform .6s cubic-bezier(.2,.7,.2,1);
+}
+.project__media-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(227,123,62,0.06), transparent 50%),
+    repeating-linear-gradient(45deg,
+      rgba(244,239,230,0.025) 0 1px,
+      transparent 1px 14px);
+  pointer-events: none;
+}
+.project__media-frame iframe,
+.project__media-frame video,
+.project__media-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  display: block;
+}
+.project__media-frame:has(iframe)::before,
+.project__media-frame:has(video)::before,
+.project__media-frame:has(img)::before { display: none; }
+.project__media-frame:hover { border-color: var(--accent); }
+
+/* Variante vídeo — 16:9 com fundo preto */
+.project__media-frame--video {
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+.project__media-frame--video iframe {
+  object-fit: contain;
+}
+
+.media-placeholder {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--mute);
+  text-align: center;
+  padding: 24px;
+}
+.media-placeholder svg { color: var(--accent); }
+.media-placeholder span {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink-soft);
+}
+.media-placeholder code {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--mute);
+}
+
+.project__caption {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--mute);
+  text-transform: uppercase;
+}
