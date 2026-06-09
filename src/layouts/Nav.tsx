@@ -20,8 +20,17 @@ const NAV_ITEMS: NavItem[] = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [photoFailed, setPhotoFailed] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
+
+  // Estado "scrolled" da nav — portado de legacy/assets/main.js (limiar 24px).
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   // Fecha o menu mobile com Escape e devolve foco ao botão.
   useEffect(() => {
@@ -42,7 +51,7 @@ export default function Nav() {
   };
 
   return (
-    <header className="nav" id="nav">
+    <header className={`nav${scrolled ? ' scrolled' : ''}`} id="nav">
       <Link to="/" className="nav__mark" aria-label="Início">
         <span className="nav__mark-glyph">
           <span className="nav__mark-initial" aria-hidden="true">P</span>
