@@ -1,0 +1,145 @@
+/* HERO — portado da seção hero do legado (styles.css). */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  padding: 140px var(--pad-x) 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto auto;
+  gap: 32px clamp(20px, 4vw, 60px);
+  z-index: 2;
+}
+
+.hero__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-self: start;
+}
+.hero__meta--tl { grid-column: 1; }
+.hero__meta--tr {
+  grid-column: 2;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.hero__title {
+  grid-column: 1 / -1;
+  align-self: end;
+}
+
+/* display — portado do primitivo .display do legado */
+.display {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
+  letter-spacing: -0.045em;
+  line-height: 0.86;
+  margin: 0;
+}
+.display em {
+  font-style: italic;
+  font-weight: 300;
+  font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+  color: var(--accent);
+}
+.hero__title .display {
+  font-size: clamp(64px, 14vw, 232px);
+}
+.word {
+  display: inline-block;
+  padding-right: 0.06em;
+}
+.word--tail {
+  display: block;
+  padding-left: clamp(40px, 8vw, 180px);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 0.7em;
+  letter-spacing: -0.03em;
+  font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+}
+
+.hero__role {
+  grid-column: 1 / span 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding-top: 24px;
+  max-width: 56ch;
+}
+.role-line {
+  display: block;
+  width: 56px;
+  height: 1px;
+  background: var(--accent);
+  margin-top: 14px;
+  flex-shrink: 0;
+}
+.hero__role p {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+.hero__role strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.hero__lede {
+  grid-column: 2 / -1;
+  padding-top: 24px;
+  max-width: 54ch;
+  justify-self: end;
+}
+.hero__lede p {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(17px, 1.4vw, 21px);
+  line-height: 1.45;
+  color: var(--ink-soft);
+  letter-spacing: -0.01em;
+  margin: 0 0 28px;
+}
+.hero__lede p em {
+  font-style: italic;
+  color: var(--accent-2);
+}
+.hero__cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero__aside {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-top: 60px;
+  border-top: 1px solid var(--line-soft);
+  margin-top: 24px;
+}
+.hero__aside-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.hero__aside-row span:nth-child(2) {
+  font-family: var(--serif);
+  font-size: clamp(15px, 1.2vw, 17px);
+  color: var(--ink);
+  letter-spacing: -0.005em;
+  line-height: 1.35;
+}
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; padding-top: 110px; }
+  .hero__meta--tr { grid-column: 1; align-items: flex-start; text-align: left; }
+  .hero__role, .hero__lede { grid-column: 1; max-width: 100%; justify-self: start; padding-top: 8px; }
+  .hero__aside { grid-template-columns: 1fr; gap: 18px; }
+  .word--tail { padding-left: 24px; }
+}

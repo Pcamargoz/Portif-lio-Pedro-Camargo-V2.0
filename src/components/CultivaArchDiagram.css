@@ -1,0 +1,90 @@
+/* Bloco de arquitetura — portado de .arch do legado (styles.css). */
+.arch {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 32px clamp(20px, 3vw, 40px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(227,123,62,0.04), rgba(167,226,107,0.025) 60%, rgba(14,13,11,0)),
+    linear-gradient(0deg, var(--bg-2), var(--bg-2));
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+}
+.arch__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.arch__svg-wrap {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 0;
+  min-width: 0;
+  max-width: 100%;
+}
+.arch__svg {
+  width: 100%;
+  min-width: 920px;
+  height: auto;
+  display: block;
+}
+.arch__cap {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0;
+  padding-top: 4px;
+  max-width: 90ch;
+}
+.arch__cap strong { color: var(--ink); font-weight: 500; }
+.arch__cap code {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 2px 7px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: rgba(244,239,230,0.04);
+  color: var(--accent);
+}
+
+@media (max-width: 700px) {
+  .arch { padding: 24px 18px; }
+  .arch__svg { min-width: 780px; }
+}
+
+@media (max-width: 620px) {
+  .arch {
+    padding: 22px 16px;
+    gap: 16px;
+    border-radius: 8px;
+  }
+  .arch__head { padding-bottom: 12px; }
+  .arch__head .kicker { font-size: 9.5px; }
+  .arch__svg-wrap {
+    /* Fade na borda direita — sinaliza "role para ver mais" */
+    -webkit-mask-image: linear-gradient(90deg, black 0%, black 92%, transparent 100%);
+            mask-image: linear-gradient(90deg, black 0%, black 92%, transparent 100%);
+  }
+  .arch__svg { min-width: 720px; }
+  .arch__cap {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .arch__cap code { font-size: 11.5px; padding: 1px 6px; }
+}
+
+@media (max-width: 400px) {
+  .arch__svg { min-width: 640px; }
+  .arch__cap { font-size: 12.5px; }
+  .arch { padding: 18px 14px; }
+}
