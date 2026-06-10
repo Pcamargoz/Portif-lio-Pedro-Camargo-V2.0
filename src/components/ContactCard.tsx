@@ -42,6 +42,7 @@ export function ContactCard({
           {description && <p>{description}</p>}
           {arrow && <span className="contact-card__featured-arrow">{arrow}</span>}
         </div>
+        {external && <span className="visually-hidden"> (abre em nova aba)</span>}
       </a>
     );
   }
@@ -51,6 +52,7 @@ export function ContactCard({
       <Kicker tone="muted">{kicker}</Kicker>
       <span className="contact-card__value">{value}</span>
       {arrow && <span className="contact-card__arrow">{arrow}</span>}
+      {external && <span className="visually-hidden"> (abre em nova aba)</span>}
     </a>
   );
 }

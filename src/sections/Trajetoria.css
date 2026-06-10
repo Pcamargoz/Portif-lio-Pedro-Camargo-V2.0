@@ -1,0 +1,36 @@
+/* Trajetória — portado de .trajetoria do legado */
+.traj__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 100px);
+}
+.traj__col-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin: 0 0 32px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+  font-weight: 500;
+}
+
+.traj__see-certs {
+  margin-top: 36px;
+  padding: 20px 22px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+}
+.traj__see-certs .kicker { display: block; margin-bottom: 8px; }
+.traj__see-certs p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+@media (max-width: 860px) {
+  .traj__cols { grid-template-columns: 1fr; }
+}

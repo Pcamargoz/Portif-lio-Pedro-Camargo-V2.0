@@ -1,0 +1,27 @@
+/* Contato & redes — portado de .contato do legado */
+.contato__wrap {
+  display: grid;
+  gap: clamp(50px, 7vw, 90px);
+}
+.contato__bigtext {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(36px, 5.5vw, 88px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  margin: 0;
+  max-width: 18ch;
+  color: var(--ink);
+}
+
+.contato__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line-soft);
+  border: 1px solid var(--line-soft);
+}
+
+@media (max-width: 720px) {
+  .contato__grid { grid-template-columns: 1fr; }
+}
