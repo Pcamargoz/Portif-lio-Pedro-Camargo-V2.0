@@ -55,6 +55,7 @@ export function Button({
       {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
     >
       {inner}
+      {isExternal && <span className="visually-hidden"> (abre em nova aba)</span>}
     </a>
   );
 }

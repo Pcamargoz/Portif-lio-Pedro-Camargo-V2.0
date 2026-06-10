@@ -81,7 +81,7 @@ export function GitHubStats({ repo, fallback }: GitHubStatsProps) {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Ver repositório ↗
+        Ver repositório ↗<span className="visually-hidden"> (abre em nova aba)</span>
       </a>
     </section>
   );
