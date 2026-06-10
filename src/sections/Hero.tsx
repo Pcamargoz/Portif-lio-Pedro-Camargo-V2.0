@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { profile } from '../content/profile';
 import { Button } from '../components/Button';
 import './Hero.css';

@@ -9,12 +9,12 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { num: '01', label: 'Sobre', hash: '#sobre' },
-  { num: '02', label: 'Atuação', hash: '#atuacao' },
-  { num: '03', label: 'Certs', hash: '#certificacoes' },
-  { num: '04', label: 'Stack', hash: '#stack' },
-  { num: '05', label: 'Trajetória', hash: '#trajetoria' },
-  { num: '06', label: 'Projetos', hash: '#projetos' },
+  { num: '01', label: 'Projetos', hash: '#projetos' },
+  { num: '02', label: 'Sobre', hash: '#sobre' },
+  { num: '03', label: 'Atuação', hash: '#atuacao' },
+  { num: '04', label: 'Certs', hash: '#certificacoes' },
+  { num: '05', label: 'Stack', hash: '#stack' },
+  { num: '06', label: 'Trajetória', hash: '#trajetoria' },
   { num: '07', label: 'Contato', hash: '#contato' },
 ];
 

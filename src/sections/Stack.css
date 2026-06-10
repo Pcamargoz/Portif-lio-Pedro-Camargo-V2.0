@@ -1,0 +1,67 @@
+/* Stack técnica — portado de .stack do legado (grid de 3 colunas) */
+.stack__intro {
+  max-width: 64ch;
+  margin: -40px auto 60px;
+  text-align: center;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--ink-soft);
+}
+
+.stack__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line-soft);
+  border: 1px solid var(--line-soft);
+}
+.capa {
+  background: var(--bg);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  transition: background .4s ease;
+  min-height: 280px;
+}
+.capa:hover { background: var(--bg-2); }
+.capa header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.capa__idx {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.16em;
+}
+.capa h3 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(22px, 2vw, 28px);
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
+}
+.capa p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.capa .taglist { margin-top: auto; }
+.capa--wide { grid-column: 1 / -1; }
+.capa--wide .taglist li { font-size: 12px; }
+
+@media (max-width: 1100px) {
+  .stack__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .stack__grid { grid-template-columns: 1fr; }
+}
