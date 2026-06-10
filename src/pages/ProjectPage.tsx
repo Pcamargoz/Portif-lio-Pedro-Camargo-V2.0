@@ -6,6 +6,7 @@ import { Kicker } from '../components/Kicker';
 import { TagList } from '../components/TagList';
 import { MediaFrame } from '../components/MediaFrame';
 import { CultivaArchDiagram } from '../components/CultivaArchDiagram';
+import { GitHubStats } from '../components/GitHubStats';
 import { Button } from '../components/Button';
 import NotFoundPage from './NotFoundPage';
 import './ProjectPage.css';
@@ -123,7 +124,7 @@ export default function ProjectPage() {
             <TagList tags={project.tech} label="Tecnologias do projeto" />
           </div>
 
-          {/* GitHubStats — Fase 3 */}
+          <GitHubStats repo={project.githubRepo} fallback={project.fallbackStats} />
         </div>
 
         <div className="project-page__media">
