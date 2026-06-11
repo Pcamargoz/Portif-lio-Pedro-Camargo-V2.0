@@ -29,7 +29,6 @@ export interface Project {
   insight?: { kicker: string; text: string };
   tech: string[];
   media: ProjectMedia;
-  hasArchitectureDiagram: boolean;
   links: ProjectLink[];
   githubRepo?: string;
   fallbackStats: GitHubRepoStats;

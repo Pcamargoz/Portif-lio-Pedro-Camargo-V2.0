@@ -5,7 +5,6 @@ import type { ProjectLink } from '../content/types';
 import { Kicker } from '../components/Kicker';
 import { TagList } from '../components/TagList';
 import { MediaFrame } from '../components/MediaFrame';
-import { CultivaArchDiagram } from '../components/CultivaArchDiagram';
 import { GitHubStats } from '../components/GitHubStats';
 import { Button } from '../components/Button';
 import NotFoundPage from './NotFoundPage';
@@ -131,12 +130,6 @@ export default function ProjectPage() {
           <MediaFrame media={project.media} />
         </div>
       </div>
-
-      {project.hasArchitectureDiagram && (
-        <div className="project-page__arch">
-          <CultivaArchDiagram />
-        </div>
-      )}
 
       <div className="project__links">
         {project.links.map((link) => (

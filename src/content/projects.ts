@@ -34,7 +34,6 @@ export const projects: Project[] = [
       caption:
         'Fig. 01 · Vídeo demonstrativo no YouTube — tour completo pela aplicação narrado pelo autor.',
     },
-    hasArchitectureDiagram: true,
     links: [
       {
         label: 'Código no GitHub',
@@ -91,7 +90,6 @@ export const projects: Project[] = [
       caption:
         'Fig. 02 · Resumo do NEO ENERGY — geração solar, irrigação inteligente e histórico, em tempo real.',
     },
-    hasArchitectureDiagram: false,
     links: [
       {
         label: 'Aplicação ao vivo',

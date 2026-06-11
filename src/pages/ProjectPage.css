@@ -114,8 +114,6 @@
 
 .project-page__media { min-width: 0; }
 
-.project-page__arch { min-width: 0; }
-
 /* Pager anterior/próximo */
 .project-page__pager {
   display: grid;
