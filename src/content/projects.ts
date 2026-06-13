@@ -84,11 +84,11 @@ export const projects: Project[] = [
       'Maven',
     ],
     media: {
-      type: 'image',
-      src: '/neo-energy.png',
-      alt: 'Resumo visual do NEO ENERGY — dashboard de energia solar, irrigação inteligente e histórico de atividades',
+      type: 'youtube',
+      src: 'https://www.youtube.com/embed/d_CgiWGqPuU?rel=0&modestbranding=1',
+      alt: 'Vídeo demonstrativo do NEO ENERGY no YouTube',
       caption:
-        'Fig. 02 · Resumo do NEO ENERGY — geração solar, irrigação inteligente e histórico, em tempo real.',
+        'Fig. 02 · Vídeo demonstrativo do NEO ENERGY — geração solar, irrigação inteligente e histórico, em tempo real.',
     },
     links: [
       {
