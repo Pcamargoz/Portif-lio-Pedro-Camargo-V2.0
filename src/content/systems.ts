@@ -9,10 +9,10 @@ export const sistemasMedia: {
   logo?: { src: string; alt: string };
   linktree?: { src: string; alt: string };
 } = {
-  // logo: {
-  //   src: '/sistemas/sistemas-logo.png',
-  //   alt: 'Pedro César Camargo dos Santos — Desenvolvedor Back-end.',
-  // },
+  logo: {
+    src: '/sistemas/sistemas-logo.png',
+    alt: 'Pedro César Camargo dos Santos — Desenvolvedor Back-end.',
+  },
   linktree: {
     src: '/sistemas/sistemas-linktree.jpeg',
     alt: 'Central de acesso aos sistemas internos (amostra autorizada).',
