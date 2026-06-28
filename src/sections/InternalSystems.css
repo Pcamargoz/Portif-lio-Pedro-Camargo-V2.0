@@ -56,10 +56,53 @@
   overflow: hidden;
   background: var(--bg-2);
 }
+.sistemas__linktree-btn {
+  position: relative;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: var(--bg-2);
+  cursor: zoom-in;
+  font: inherit;
+  color: inherit;
+}
 .sistemas__linktree img {
   max-width: min(100%, 520px);
   height: auto;
   display: block;
+  transition: opacity .25s ease;
+}
+.sistemas__linktree-btn:hover img,
+.sistemas__linktree-btn:focus-visible img {
+  opacity: 0.8;
+}
+.sistemas__zoom-hint {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--bg) 70%, transparent);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 5px 9px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .25s ease, transform .25s ease;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+.sistemas__linktree-btn:hover .sistemas__zoom-hint,
+.sistemas__linktree-btn:focus-visible .sistemas__zoom-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .sistemas__linktree img,
+  .sistemas__zoom-hint { transition: none; }
 }
 .sistemas__linktree figcaption {
   padding: 10px 16px;

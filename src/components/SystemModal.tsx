@@ -1,7 +1,8 @@
-import { useEffect, useId, useRef } from 'react';
-import type { InternalSystem } from '../content/types';
+import { useEffect, useId, useRef, useState } from 'react';
+import type { InternalSystem, SystemShot } from '../content/types';
 import { Kicker } from './Kicker';
 import { TagList } from './TagList';
+import { Lightbox } from './Lightbox';
 import { statusClass } from './systemStatus';
 import './SystemModal.css';
 
@@ -22,6 +23,7 @@ export function SystemModal({ system, onClose }: SystemModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
   const descId = useId();
+  const [zoom, setZoom] = useState<SystemShot | null>(null);
 
   // Trava scroll do body + Esc + trap de foco; restaura foco ao fechar.
   useEffect(() => {
@@ -159,12 +161,22 @@ export function SystemModal({ system, onClose }: SystemModalProps) {
                 {system.shots.map((shot, i) => (
                   <figure className="system-modal__shot" key={shot.src ?? i}>
                     {shot.src ? (
-                      <img
-                        src={shot.src}
-                        alt={shot.alt}
-                        loading="lazy"
-                        decoding="async"
-                      />
+                      <button
+                        type="button"
+                        className="system-modal__shot-btn"
+                        onClick={() => setZoom(shot)}
+                        aria-label={`Ampliar imagem: ${shot.alt}`}
+                      >
+                        <img
+                          src={shot.src}
+                          alt={shot.alt}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <span className="system-modal__zoom-hint" aria-hidden="true">
+                          ⤢ Ampliar
+                        </span>
+                      </button>
                     ) : (
                       <span
                         className="system-modal__shot-placeholder"
@@ -181,6 +193,15 @@ export function SystemModal({ system, onClose }: SystemModalProps) {
             </section>
           )}
         </div>
+
+        {zoom?.src && (
+          <Lightbox
+            src={zoom.src}
+            alt={zoom.alt}
+            caption={zoom.caption}
+            onClose={() => setZoom(null)}
+          />
+        )}
       </div>
     </div>
   );

@@ -3,7 +3,14 @@ import { systems, sistemasMedia } from '../content/systems';
 import { SectionHeading } from '../components/SectionHeading';
 import { SystemCard } from '../components/SystemCard';
 import { SystemModal } from '../components/SystemModal';
+import { Lightbox } from '../components/Lightbox';
 import './InternalSystems.css';
+
+interface ZoomImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
 
 /**
  * Vitrine de sistemas internos — segunda seção da home (/ 02).
@@ -12,6 +19,7 @@ import './InternalSystems.css';
  */
 export function InternalSystems() {
   const [openSlug, setOpenSlug] = useState<string | null>(null);
+  const [zoom, setZoom] = useState<ZoomImage | null>(null);
   const openSystem = systems.find((s) => s.slug === openSlug) ?? null;
 
   return (
@@ -43,12 +51,26 @@ export function InternalSystems() {
 
       {sistemasMedia.linktree && (
         <figure className="sistemas__linktree">
-          <img
-            src={sistemasMedia.linktree.src}
-            alt={sistemasMedia.linktree.alt}
-            loading="lazy"
-            decoding="async"
-          />
+          <button
+            type="button"
+            className="sistemas__linktree-btn"
+            onClick={() =>
+              setZoom({
+                src: sistemasMedia.linktree!.src,
+                alt: sistemasMedia.linktree!.alt,
+                caption: 'Central de acesso aos sistemas internos · amostra autorizada.',
+              })
+            }
+            aria-label="Ampliar imagem do linktree de sistemas internos"
+          >
+            <img
+              src={sistemasMedia.linktree.src}
+              alt={sistemasMedia.linktree.alt}
+              loading="lazy"
+              decoding="async"
+            />
+            <span className="sistemas__zoom-hint" aria-hidden="true">⤢ Ampliar</span>
+          </button>
           <figcaption>
             Central de acesso aos sistemas internos · amostra autorizada.
           </figcaption>
@@ -68,6 +90,15 @@ export function InternalSystems() {
 
       {openSystem && (
         <SystemModal system={openSystem} onClose={() => setOpenSlug(null)} />
+      )}
+
+      {zoom && (
+        <Lightbox
+          src={zoom.src}
+          alt={zoom.alt}
+          caption={zoom.caption}
+          onClose={() => setZoom(null)}
+        />
       )}
     </section>
   );
