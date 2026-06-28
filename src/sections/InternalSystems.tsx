@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { systems } from '../content/systems';
+import { systems, sistemasMedia } from '../content/systems';
 import { SectionHeading } from '../components/SectionHeading';
 import { SystemCard } from '../components/SystemCard';
 import { SystemModal } from '../components/SystemModal';
@@ -30,6 +30,30 @@ export function InternalSystems() {
         uma amostra visual e técnica autorizada — sem expor regras de negócio,
         dados, clientes ou funcionalidades completas.
       </p>
+
+      {sistemasMedia.logo && (
+        <figure className="sistemas__logo">
+          <img
+            src={sistemasMedia.logo.src}
+            alt={sistemasMedia.logo.alt}
+            decoding="async"
+          />
+        </figure>
+      )}
+
+      {sistemasMedia.linktree && (
+        <figure className="sistemas__linktree">
+          <img
+            src={sistemasMedia.linktree.src}
+            alt={sistemasMedia.linktree.alt}
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>
+            Central de acesso aos sistemas internos · amostra autorizada.
+          </figcaption>
+        </figure>
+      )}
 
       <div className="systems-grid">
         {systems.map((system, index) => (
