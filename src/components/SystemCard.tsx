@@ -46,18 +46,14 @@ export function SystemCard({ system, index, onOpen }: SystemCardProps) {
         </span>
 
         {system.status === 'Em desenvolvimento' && (
-          <span className="system-card__tape" aria-hidden="true">
-            <span className="crime-tape crime-tape--a">
-              <span>Em desenvolvimento</span>
-              <span>Em desenvolvimento</span>
-              <span>Em desenvolvimento</span>
-            </span>
-            <span className="crime-tape crime-tape--b">
-              <span>Em desenvolvimento</span>
-              <span>Em desenvolvimento</span>
-              <span>Em desenvolvimento</span>
-            </span>
-          </span>
+          <img
+            className="system-card__tape"
+            src="/sistemas/faixas-em-desenvolvimento.png"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+          />
         )}
       </div>
 
