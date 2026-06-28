@@ -10,7 +10,7 @@ import './Contact.css';
 export function Contact() {
   return (
     <section className="section contato" id="contato">
-      <SectionHeading number="/ 07" title="Contato & redes" id="contato-titulo" />
+      <SectionHeading number="/ 08" title="Contato & redes" id="contato-titulo" />
 
       <div className="contato__wrap">
         <p className="contato__bigtext">{contactBigtext}</p>

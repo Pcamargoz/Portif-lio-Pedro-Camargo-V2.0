@@ -1,0 +1,52 @@
+/* Vitrine de sistemas internos — intro + aviso de sigilo + grid de cards. */
+.sistemas__intro {
+  max-width: 60ch;
+  margin: -40px 0 22px;
+  font-family: var(--serif);
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.45;
+  color: var(--ink-soft);
+  letter-spacing: -0.005em;
+}
+
+.sistemas__confidential {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  max-width: 70ch;
+  margin: 0 0 56px;
+  padding: 16px 18px;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--mute);
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--radius);
+}
+.sistemas__lock { flex: none; font-size: 14px; line-height: 1.5; }
+
+.systems-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 2.5vw, 32px);
+}
+
+@media (min-width: 900px) {
+  .systems-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .section.sistemas {
+    padding-top: clamp(60px, 12vw, 90px);
+    padding-bottom: clamp(60px, 12vw, 90px);
+  }
+  .sistemas__intro {
+    margin: -20px 0 18px;
+    font-size: clamp(16px, 4.4vw, 19px);
+  }
+  .sistemas__confidential { margin-bottom: 40px; }
+}

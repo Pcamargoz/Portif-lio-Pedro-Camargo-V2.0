@@ -12,7 +12,7 @@ import './Trajetoria.css';
 export function Trajetoria() {
   return (
     <section className="section trajetoria" id="trajetoria">
-      <SectionHeading number="/ 06" title="Trajetória" id="trajetoria-titulo" />
+      <SectionHeading number="/ 07" title="Trajetória" id="trajetoria-titulo" />
 
       <div className="traj__cols">
         <div className="traj__col">

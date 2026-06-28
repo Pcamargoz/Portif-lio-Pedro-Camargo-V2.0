@@ -103,7 +103,7 @@ export function Certs() {
   return (
     <section className="section certs-feature" id="certificacoes">
       <SectionHeading
-        number="/ 04"
+        number="/ 05"
         title="Especialização & certificações"
         id="certificacoes-titulo"
       />

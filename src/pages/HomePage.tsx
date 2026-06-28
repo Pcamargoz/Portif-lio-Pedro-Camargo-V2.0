@@ -2,6 +2,7 @@ import { profile } from '../content/profile';
 import { Hero } from '../sections/Hero';
 import { Marquee } from '../components/Marquee';
 import { ProjectsShowcase } from '../sections/ProjectsShowcase';
+import { InternalSystems } from '../sections/InternalSystems';
 import { About } from '../sections/About';
 import { Atuacao } from '../sections/Atuacao';
 import { Certs } from '../sections/Certs';
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Hero />
       <Marquee items={profile.marqueeItems} />
       <ProjectsShowcase />
+      <InternalSystems />
       <About />
       <Atuacao />
       <Certs />

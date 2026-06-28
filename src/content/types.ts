@@ -34,6 +34,30 @@ export interface Project {
   fallbackStats: GitHubRepoStats;
 }
 
+export type SystemStatus = 'Em produção' | 'Em desenvolvimento' | 'Finalizado';
+
+export interface SystemShot {
+  src?: string;
+  alt: string;
+  caption?: string;
+}
+
+export interface InternalSystem {
+  slug: string;
+  name: string;
+  tagline: string;
+  objective: string;
+  status: SystemStatus;
+  tech: string[];
+  cover?: SystemShot;
+  problem: string;
+  solution: string;
+  challenges: string[];
+  improvements: string[];
+  role: string;
+  shots: SystemShot[];
+}
+
 export interface TimelineEntryData {
   period: { start: string; end?: string };
   title: string;

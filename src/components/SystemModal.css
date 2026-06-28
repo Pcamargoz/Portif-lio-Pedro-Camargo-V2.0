@@ -1,0 +1,218 @@
+/* =============================================================
+   SystemModal — modal de detalhes de um sistema interno.
+   Backdrop escuro com blur; painel editorial coerente com o tema.
+   ============================================================= */
+.system-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(16px, 5vh, 64px) clamp(14px, 4vw, 48px);
+  overflow-y: auto;
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  backdrop-filter: blur(6px);
+  animation: system-modal-fade .25s ease both;
+}
+
+.system-modal {
+  position: relative;
+  width: min(860px, 100%);
+  margin: auto;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(28px, 4vw, 56px);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.55);
+  animation: system-modal-rise .3s cubic-bezier(.2,.7,.2,1) both;
+}
+.system-modal:focus { outline: none; }
+
+.system-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--ink-soft);
+  background: var(--bg-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color .3s ease, color .3s ease, transform .3s ease;
+}
+.system-modal__close:hover,
+.system-modal__close:focus-visible {
+  color: var(--ink);
+  border-color: var(--accent);
+  transform: rotate(90deg);
+}
+
+/* --- head --- */
+.system-modal__head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 48px;
+}
+.system-modal__title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin: 0;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
+}
+.system-modal__tagline {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(16px, 1.6vw, 20px);
+  line-height: 1.45;
+  color: var(--ink-soft);
+  max-width: 58ch;
+}
+
+/* --- aviso de sigilo --- */
+.system-modal__confidential {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin: 26px 0 8px;
+  padding: 16px 18px;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--mute);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--radius);
+}
+.system-modal__lock { flex: none; font-size: 14px; line-height: 1.5; }
+
+/* --- body --- */
+.system-modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(22px, 3vw, 32px);
+  margin-top: 26px;
+}
+.system-modal__block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.system-modal__block p {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 64ch;
+}
+
+.system-modal__cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(22px, 3vw, 32px);
+}
+@media (min-width: 720px) {
+  .system-modal__cols { grid-template-columns: 1fr 1fr; }
+}
+
+.system-modal__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.system-modal__list li {
+  position: relative;
+  padding-left: 20px;
+  font-family: var(--sans);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.system-modal__list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--mute-2);
+}
+.system-modal__list--gain li::before {
+  content: "↗";
+  color: var(--accent-3);
+}
+
+/* --- galeria --- */
+.system-modal__gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 640px) {
+  .system-modal__gallery { grid-template-columns: 1fr 1fr; }
+}
+.system-modal__shot {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-3);
+}
+.system-modal__shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.system-modal__shot-placeholder {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 10;
+  background-image:
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size: 26px 26px;
+  font-family: var(--mono);
+  font-size: clamp(24px, 4vw, 40px);
+  color: var(--mute-2);
+}
+.system-modal__shot figcaption {
+  padding: 10px 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--mute);
+  border-top: 1px solid var(--line);
+}
+
+@keyframes system-modal-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes system-modal-rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .system-modal__backdrop,
+  .system-modal { animation: none; }
+  .system-modal__close:hover,
+  .system-modal__close:focus-visible { transform: none; }
+}
+
+@media (max-width: 560px) {
+  .system-modal { padding: 26px 20px; }
+  .system-modal__head { padding-right: 40px; }
+}

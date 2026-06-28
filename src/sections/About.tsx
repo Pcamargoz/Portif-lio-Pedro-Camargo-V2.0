@@ -10,7 +10,7 @@ import './About.css';
 export function About() {
   return (
     <section className="section sobre" id="sobre">
-      <SectionHeading number="/ 02" title="Sobre" id="sobre-titulo" />
+      <SectionHeading number="/ 03" title="Sobre" id="sobre-titulo" />
 
       <div className="sobre__grid">
         <div className="sobre__lead">

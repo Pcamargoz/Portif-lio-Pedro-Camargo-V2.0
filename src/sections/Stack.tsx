@@ -9,7 +9,7 @@ import './Stack.css';
 export function Stack() {
   return (
     <section className="section stack" id="stack">
-      <SectionHeading number="/ 05" title="Stack técnica" id="stack-titulo" />
+      <SectionHeading number="/ 06" title="Stack técnica" id="stack-titulo" />
 
       <p className="stack__intro">{stackIntro}</p>
 

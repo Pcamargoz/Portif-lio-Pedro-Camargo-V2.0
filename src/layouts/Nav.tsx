@@ -10,12 +10,13 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { num: '01', label: 'Projetos', hash: '#projetos' },
-  { num: '02', label: 'Sobre', hash: '#sobre' },
-  { num: '03', label: 'Atuação', hash: '#atuacao' },
-  { num: '04', label: 'Certs', hash: '#certificacoes' },
-  { num: '05', label: 'Stack', hash: '#stack' },
-  { num: '06', label: 'Trajetória', hash: '#trajetoria' },
-  { num: '07', label: 'Contato', hash: '#contato' },
+  { num: '02', label: 'Sistemas', hash: '#sistemas' },
+  { num: '03', label: 'Sobre', hash: '#sobre' },
+  { num: '04', label: 'Atuação', hash: '#atuacao' },
+  { num: '05', label: 'Certs', hash: '#certificacoes' },
+  { num: '06', label: 'Stack', hash: '#stack' },
+  { num: '07', label: 'Trajetória', hash: '#trajetoria' },
+  { num: '08', label: 'Contato', hash: '#contato' },
 ];
 
 export default function Nav() {

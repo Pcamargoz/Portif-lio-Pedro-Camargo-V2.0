@@ -61,7 +61,7 @@ function Card({ card }: { card: AtuacaoCard }) {
 export function Atuacao() {
   return (
     <section className="section atuacao" id="atuacao">
-      <SectionHeading number="/ 03" title="Atuação atual" id="atuacao-titulo" />
+      <SectionHeading number="/ 04" title="Atuação atual" id="atuacao-titulo" />
 
       <div className="atuacao__intro">
         <p>
