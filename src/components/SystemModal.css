@@ -172,8 +172,10 @@
   background: var(--bg-3);
 }
 .system-modal__shot img {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
+  margin: 0 auto;
   display: block;
 }
 .system-modal__shot-placeholder {

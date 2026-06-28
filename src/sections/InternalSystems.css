@@ -29,7 +29,10 @@
 
 /* Logo / capa principal da seção */
 .sistemas__logo {
+  display: flex;
+  justify-content: center;
   margin: 0 0 clamp(20px, 3vw, 32px);
+  padding: clamp(16px, 3vw, 32px);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
@@ -38,19 +41,23 @@
 .sistemas__logo img {
   width: 100%;
   height: auto;
+  max-height: clamp(240px, 42vh, 460px);
+  object-fit: contain;
   display: block;
 }
 
-/* Linktree — central de acesso */
+/* Linktree — central de acesso (imagem em retrato: hug + centralizado) */
 .sistemas__linktree {
-  margin: 0 0 clamp(40px, 6vw, 64px);
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto clamp(40px, 6vw, 64px);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--bg-2);
 }
 .sistemas__linktree img {
-  width: 100%;
+  max-width: min(100%, 520px);
   height: auto;
   display: block;
 }
@@ -61,6 +68,7 @@
   letter-spacing: 0.06em;
   color: var(--mute);
   border-top: 1px solid var(--line);
+  text-align: center;
 }
 
 .systems-grid {
