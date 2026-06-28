@@ -19,7 +19,10 @@ export const systems: InternalSystem[] = [
       'Padronizar e acelerar a entrada de novos clientes, eliminando etapas manuais e retrabalho na implantação.',
     status: 'Em produção',
     tech: ['React', 'TypeScript', 'Node.js', 'REST API', 'PostgreSQL'],
-    cover: { alt: 'Tela de onboarding de clientes (amostra autorizada).' },
+    cover: {
+      src: '/sistemas/onboarding-clientes-capa.png',
+      alt: 'Tela de onboarding de clientes (amostra autorizada).',
+    },
     problem:
       'A integração de novos clientes era feita de forma manual e dispersa, sem um roteiro único — gerando inconsistência, etapas esquecidas e dependência de pessoas específicas.',
     solution:
@@ -36,6 +39,7 @@ export const systems: InternalSystem[] = [
     role: 'Responsável pelo levantamento do processo, modelagem e desenvolvimento da solução ponta a ponta.',
     shots: [
       {
+        src: '/sistemas/onboarding-clientes-01.png',
         alt: 'Etapa do fluxo de onboarding (amostra autorizada).',
         caption: 'Amostra autorizada · informações sensíveis omitidas.',
       },
