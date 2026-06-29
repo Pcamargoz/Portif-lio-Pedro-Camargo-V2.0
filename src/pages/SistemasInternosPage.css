@@ -1,0 +1,184 @@
+/* =============================================================
+   Página dedicada de sistemas internos (/sistemas-internos).
+   Standalone (sem a nav/footer do site) — foco total nos sistemas.
+   ============================================================= */
+.si-page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  padding-bottom: clamp(80px, 12vw, 160px);
+}
+
+.si-page__bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px var(--pad-x);
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+.si-page__back {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  transition: color .3s ease;
+}
+.si-page__back:hover,
+.si-page__back:focus-visible {
+  color: var(--accent);
+}
+.si-page__brand {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink);
+}
+.si-page__brand em {
+  color: var(--accent);
+}
+
+.si-page__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(36px, 6vw, 80px) var(--pad-x) 0;
+}
+
+/* Logo — só a imagem, sem moldura */
+.si-page__logo {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 clamp(24px, 4vw, 44px);
+}
+.si-page__logo img {
+  width: 100%;
+  height: auto;
+  max-height: clamp(240px, 44vh, 480px);
+  object-fit: contain;
+  display: block;
+}
+
+.si-page__title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(40px, 7vw, 84px);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin: 0 0 18px;
+  color: var(--ink);
+  font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
+}
+
+.si-page__intro {
+  max-width: 62ch;
+  margin: 0 0 22px;
+  font-family: var(--serif);
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.45;
+  color: var(--ink-soft);
+  letter-spacing: -0.005em;
+}
+
+.si-page__confidential {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  max-width: 70ch;
+  margin: 0 0 clamp(40px, 6vw, 56px);
+  padding: 16px 18px;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--mute);
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--radius);
+}
+.si-page__lock { flex: none; font-size: 14px; line-height: 1.5; }
+
+/* Linktree — imagem em retrato: hug + centralizado, clicável p/ ampliar */
+.si-page__linktree {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto clamp(40px, 6vw, 64px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-2);
+}
+.si-page__linktree-btn {
+  position: relative;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: var(--bg-2);
+  cursor: zoom-in;
+  font: inherit;
+  color: inherit;
+}
+.si-page__linktree img {
+  max-width: min(100%, 520px);
+  height: auto;
+  display: block;
+  transition: opacity .25s ease;
+}
+.si-page__linktree-btn:hover img,
+.si-page__linktree-btn:focus-visible img {
+  opacity: 0.8;
+}
+.si-page__zoom-hint {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--bg) 70%, transparent);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 5px 9px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .25s ease, transform .25s ease;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+.si-page__linktree-btn:hover .si-page__zoom-hint,
+.si-page__linktree-btn:focus-visible .si-page__zoom-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+.si-page__linktree figcaption {
+  padding: 10px 16px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--mute);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+/* Grid de cards (reaproveitado pelo SystemCard) */
+.systems-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 2.5vw, 32px);
+}
+@media (min-width: 900px) {
+  .systems-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .si-page__linktree img,
+  .si-page__zoom-hint { transition: none; }
+}

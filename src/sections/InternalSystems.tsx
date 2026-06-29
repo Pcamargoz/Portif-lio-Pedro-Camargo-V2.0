@@ -1,27 +1,24 @@
-import { useState } from 'react';
-import { systems, sistemasMedia } from '../content/systems';
+import { sistemasMedia } from '../content/systems';
 import { SectionHeading } from '../components/SectionHeading';
-import { SystemCard } from '../components/SystemCard';
-import { SystemModal } from '../components/SystemModal';
-import { Lightbox } from '../components/Lightbox';
 import './InternalSystems.css';
 
-interface ZoomImage {
-  src: string;
-  alt: string;
-  caption?: string;
-}
+const ExternalIcon = () => (
+  <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      d="M14 3h7v7M21 3l-9 9M10 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+    />
+  </svg>
+);
 
 /**
- * Vitrine de sistemas internos — segunda seção da home (/ 02).
- * Cards independentes que abrem um modal de detalhes (demonstração controlada).
- * Conteúdo anonimizado por sigilo corporativo.
+ * Portal dos sistemas internos na home (/ 02). Não expõe os sistemas
+ * diretamente: apresenta a identidade visual e um botão que abre a área
+ * dedicada (/sistemas-internos) em uma nova aba.
  */
 export function InternalSystems() {
-  const [openSlug, setOpenSlug] = useState<string | null>(null);
-  const [zoom, setZoom] = useState<ZoomImage | null>(null);
-  const openSystem = systems.find((s) => s.slug === openSlug) ?? null;
-
   return (
     <section className="section sistemas" id="sistemas">
       <SectionHeading number="/ 02" title="Sistemas internos" id="sistemas-titulo" />
@@ -34,9 +31,9 @@ export function InternalSystems() {
 
       <p className="sistemas__confidential" role="note">
         <span className="sistemas__lock" aria-hidden="true">🔒</span>
-        Sistemas corporativos de uso interno. Por confidencialidade, exibo apenas
-        uma amostra visual e técnica autorizada — sem expor regras de negócio,
-        dados, clientes ou funcionalidades completas.
+        Sistemas corporativos de uso interno. Por confidencialidade, os detalhes
+        ficam em uma área dedicada, com apenas uma amostra visual e técnica
+        autorizada — sem expor regras de negócio, dados ou clientes.
       </p>
 
       {sistemasMedia.logo && (
@@ -49,57 +46,21 @@ export function InternalSystems() {
         </figure>
       )}
 
-      {sistemasMedia.linktree && (
-        <figure className="sistemas__linktree">
-          <button
-            type="button"
-            className="sistemas__linktree-btn"
-            onClick={() =>
-              setZoom({
-                src: sistemasMedia.linktree!.src,
-                alt: sistemasMedia.linktree!.alt,
-                caption: 'Central de acesso aos sistemas internos · amostra autorizada.',
-              })
-            }
-            aria-label="Ampliar imagem do linktree de sistemas internos"
-          >
-            <img
-              src={sistemasMedia.linktree.src}
-              alt={sistemasMedia.linktree.alt}
-              loading="lazy"
-              decoding="async"
-            />
-            <span className="sistemas__zoom-hint" aria-hidden="true">⤢ Ampliar</span>
-          </button>
-          <figcaption>
-            Central de acesso aos sistemas internos · amostra autorizada.
-          </figcaption>
-        </figure>
-      )}
-
-      <div className="systems-grid">
-        {systems.map((system, index) => (
-          <SystemCard
-            key={system.slug}
-            system={system}
-            index={index}
-            onOpen={() => setOpenSlug(system.slug)}
-          />
-        ))}
+      <div className="sistemas__cta">
+        <a
+          className="btn btn--solid"
+          href="/sistemas-internos"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Ver sistemas internos</span>
+          <ExternalIcon />
+          <span className="visually-hidden"> (abre em nova aba)</span>
+        </a>
+        <p className="sistemas__cta-note">
+          Abre em uma nova aba, em uma área dedicada e controlada.
+        </p>
       </div>
-
-      {openSystem && (
-        <SystemModal system={openSystem} onClose={() => setOpenSlug(null)} />
-      )}
-
-      {zoom && (
-        <Lightbox
-          src={zoom.src}
-          alt={zoom.alt}
-          caption={zoom.caption}
-          onClose={() => setZoom(null)}
-        />
-      )}
     </section>
   );
 }

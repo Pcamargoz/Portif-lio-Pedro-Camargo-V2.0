@@ -1,4 +1,4 @@
-/* Vitrine de sistemas internos — intro + aviso de sigilo + grid de cards. */
+/* Portal de sistemas internos na home — intro + aviso + logo + botão. */
 .sistemas__intro {
   max-width: 60ch;
   margin: -40px 0 22px;
@@ -14,7 +14,7 @@
   gap: 12px;
   align-items: flex-start;
   max-width: 70ch;
-  margin: 0 0 56px;
+  margin: 0 0 clamp(32px, 5vw, 48px);
   padding: 16px 18px;
   font-family: var(--sans);
   font-size: 13.5px;
@@ -27,16 +27,11 @@
 }
 .sistemas__lock { flex: none; font-size: 14px; line-height: 1.5; }
 
-/* Logo / capa principal da seção */
+/* Logo — só a imagem, sem moldura/quadrado */
 .sistemas__logo {
   display: flex;
   justify-content: center;
-  margin: 0 0 clamp(20px, 3vw, 32px);
-  padding: clamp(16px, 3vw, 32px);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--bg);
+  margin: 0 0 clamp(28px, 4vw, 44px);
 }
 .sistemas__logo img {
   width: 100%;
@@ -46,84 +41,23 @@
   display: block;
 }
 
-/* Linktree — central de acesso (imagem em retrato: hug + centralizado) */
-.sistemas__linktree {
-  width: fit-content;
-  max-width: 100%;
-  margin: 0 auto clamp(40px, 6vw, 64px);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--bg-2);
-}
-.sistemas__linktree-btn {
-  position: relative;
-  display: block;
-  padding: 0;
-  border: 0;
-  background: var(--bg-2);
-  cursor: zoom-in;
-  font: inherit;
-  color: inherit;
-}
-.sistemas__linktree img {
-  max-width: min(100%, 520px);
-  height: auto;
-  display: block;
-  transition: opacity .25s ease;
-}
-.sistemas__linktree-btn:hover img,
-.sistemas__linktree-btn:focus-visible img {
-  opacity: 0.8;
-}
-.sistemas__zoom-hint {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink);
-  background: color-mix(in srgb, var(--bg) 70%, transparent);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 5px 9px;
-  opacity: 0;
-  transform: translateY(-4px);
-  transition: opacity .25s ease, transform .25s ease;
-  backdrop-filter: blur(4px);
-  pointer-events: none;
-}
-.sistemas__linktree-btn:hover .sistemas__zoom-hint,
-.sistemas__linktree-btn:focus-visible .sistemas__zoom-hint {
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (prefers-reduced-motion: reduce) {
-  .sistemas__linktree img,
-  .sistemas__zoom-hint { transition: none; }
-}
-.sistemas__linktree figcaption {
-  padding: 10px 16px;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  color: var(--mute);
-  border-top: 1px solid var(--line);
+/* CTA — botão que leva à área dedicada */
+.sistemas__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
   text-align: center;
 }
-
-.systems-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(20px, 2.5vw, 32px);
+.sistemas__cta .btn {
+  font-size: 15px;
 }
-
-@media (min-width: 900px) {
-  .systems-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+.sistemas__cta-note {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: var(--mute);
 }
 
 @media (max-width: 760px) {
@@ -135,5 +69,4 @@
     margin: -20px 0 18px;
     font-size: clamp(16px, 4.4vw, 19px);
   }
-  .sistemas__confidential { margin-bottom: 40px; }
 }
