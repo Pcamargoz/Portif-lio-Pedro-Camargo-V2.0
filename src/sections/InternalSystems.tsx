@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { sistemasMedia } from '../content/systems';
 import { SectionHeading } from '../components/SectionHeading';
+import { ComingSoonModal } from '../components/ComingSoonModal';
 import './InternalSystems.css';
 
 const ExternalIcon = () => (
@@ -15,10 +17,12 @@ const ExternalIcon = () => (
 
 /**
  * Portal dos sistemas internos na home (/ 02). Não expõe os sistemas
- * diretamente: apresenta a identidade visual e um botão que abre a área
- * dedicada (/sistemas-internos) em uma nova aba.
+ * diretamente: apresenta a identidade visual e um botão que, por enquanto,
+ * abre um aviso "Em breve" — a área dedicada permanece indisponível.
  */
 export function InternalSystems() {
+  const [showComingSoon, setShowComingSoon] = useState(false);
+
   return (
     <section className="section sistemas" id="sistemas">
       <SectionHeading number="/ 02" title="Sistemas internos" id="sistemas-titulo" />
@@ -47,20 +51,22 @@ export function InternalSystems() {
       )}
 
       <div className="sistemas__cta">
-        <a
+        <button
+          type="button"
           className="btn btn--solid"
-          href="/sistemas-internos"
-          target="_blank"
-          rel="noopener noreferrer"
+          onClick={() => setShowComingSoon(true)}
         >
           <span>Ver sistemas internos</span>
           <ExternalIcon />
-          <span className="visually-hidden"> (abre em nova aba)</span>
-        </a>
+        </button>
         <p className="sistemas__cta-note">
-          Abre em uma nova aba, em uma área dedicada e controlada.
+          Área dedicada e controlada — disponível em breve.
         </p>
       </div>
+
+      {showComingSoon && (
+        <ComingSoonModal onClose={() => setShowComingSoon(false)} />
+      )}
     </section>
   );
 }
