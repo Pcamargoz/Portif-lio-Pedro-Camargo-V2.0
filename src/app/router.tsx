@@ -1,13 +1,13 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import RootLayout from '../layouts/RootLayout';
 import HomePage from '../pages/HomePage';
 import ProjectPage from '../pages/ProjectPage';
-import SistemasInternosPage from '../pages/SistemasInternosPage';
 import NotFoundPage from '../pages/NotFoundPage';
 
 export const router = createBrowserRouter([
-  // Página dedicada e standalone (sem nav/footer) — aberta em nova aba.
-  { path: '/sistemas-internos', element: <SistemasInternosPage /> },
+  // Área dedicada indisponível por enquanto: qualquer acesso direto à rota é
+  // redirecionado para a home. O portal na home exibe um aviso "Em breve".
+  { path: '/sistemas-internos', element: <Navigate to="/#sistemas" replace /> },
   {
     path: '/',
     element: <RootLayout />,
