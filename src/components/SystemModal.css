@@ -1,5 +1,5 @@
 /* =============================================================
-   SystemModal — modal de detalhes de um sistema interno.
+   SystemModal — modal de detalhes de um sistema prático.
    Backdrop escuro com blur; painel editorial coerente com o tema.
    ============================================================= */
 .system-modal__backdrop {
@@ -80,7 +80,7 @@
   max-width: 58ch;
 }
 
-/* --- aviso de sigilo --- */
+/* --- aviso de contexto --- */
 .system-modal__confidential {
   display: flex;
   gap: 12px;

@@ -16,7 +16,7 @@ const ExternalIcon = () => (
 );
 
 /**
- * Portal dos sistemas internos na home (/ 02). Não expõe os sistemas
+ * Portal dos sistemas práticos na home (/ 02). Não expõe os sistemas
  * diretamente: apresenta a identidade visual e um botão que, por enquanto,
  * abre um aviso "Em breve" — a área dedicada permanece indisponível.
  */
@@ -25,19 +25,19 @@ export function InternalSystems() {
 
   return (
     <section className="section sistemas" id="sistemas">
-      <SectionHeading number="/ 02" title="Sistemas internos" id="sistemas-titulo" />
+      <SectionHeading number="/ 02" title="Sistemas Práticos" id="sistemas-titulo" />
 
       <p className="sistemas__intro">
-        Ferramentas que projetei e desenvolvi para uso interno corporativo —
-        identificando gargalos no fluxo da equipe e transformando-os em soluções
-        que otimizam o trabalho do dia a dia.
+        Ferramentas práticas que projetei e desenvolvi para resolver problemas
+        reais do dia a dia — identificando gargalos no fluxo de trabalho e
+        transformando-os em soluções que otimizam a rotina da equipe.
       </p>
 
       <p className="sistemas__confidential" role="note">
-        <span className="sistemas__lock" aria-hidden="true">🔒</span>
-        Sistemas corporativos de uso interno. Por confidencialidade, os detalhes
-        ficam em uma área dedicada, com apenas uma amostra visual e técnica
-        autorizada — sem expor regras de negócio, dados ou clientes.
+        <span className="sistemas__lock" aria-hidden="true">🛠️</span>
+        Soluções aplicadas em ambiente profissional real. Reúno em uma área
+        dedicada uma amostra visual e técnica de cada uma — o suficiente para
+        mostrar o problema resolvido e como foi construído.
       </p>
 
       {sistemasMedia.logo && (
@@ -56,11 +56,11 @@ export function InternalSystems() {
           className="btn btn--solid"
           onClick={() => setShowComingSoon(true)}
         >
-          <span>Ver sistemas internos</span>
+          <span>Ver sistemas práticos</span>
           <ExternalIcon />
         </button>
         <p className="sistemas__cta-note">
-          Área dedicada e controlada — disponível em breve.
+          Área dedicada com todos os detalhes — disponível em breve.
         </p>
       </div>
 

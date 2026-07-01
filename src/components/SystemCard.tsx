@@ -11,7 +11,7 @@ interface SystemCardProps {
 }
 
 /**
- * Card de um sistema interno na vitrine. Diferente do ProjectCard, é um
+ * Card de um sistema prático na vitrine. Diferente do ProjectCard, é um
  * <button> que abre um modal (não navega) — reforça a ideia de demonstração
  * controlada. Estética coerente com o ProjectCard.
  */

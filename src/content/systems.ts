@@ -15,17 +15,16 @@ export const sistemasMedia: {
   },
   linktree: {
     src: '/sistemas/sistemas-linktree.jpeg',
-    alt: 'Central de acesso aos sistemas internos (amostra autorizada).',
+    alt: 'Central de acesso aos sistemas práticos (amostra autorizada).',
   },
 };
 
 /**
- * Sistemas internos corporativos — visão geral autorizada.
+ * Sistemas práticos — visão geral.
  *
- * IMPORTANTE: conteúdo anonimizado por sigilo. Os textos abaixo são um RASCUNHO
- * inicial (inferido da referência visual) para o Pedro revisar/substituir.
- * Prints reais ficam em `public/sistemas/`; enquanto `src` estiver ausente,
- * exibimos um placeholder.
+ * Os textos abaixo são um RASCUNHO inicial (inferido da referência visual) para
+ * o Pedro revisar/substituir. Prints reais ficam em `public/sistemas/`;
+ * enquanto `src` estiver ausente, exibimos um placeholder.
  */
 export const systems: InternalSystem[] = [
   {
@@ -67,7 +66,7 @@ export const systems: InternalSystem[] = [
     slug: 'report-bugs-feedback',
     name: 'Report de Bugs & Feedback',
     tagline:
-      'Estúdio interno para montar relatórios de bugs e coletar feedback por módulo, com indicadores.',
+      'Estúdio para montar relatórios de bugs e coletar feedback por módulo, com indicadores.',
     objective:
       'Estruturar o registro de bugs e feedback, transformando relatos soltos em relatórios organizados e acionáveis.',
     status: 'Em produção',
@@ -138,7 +137,7 @@ export const systems: InternalSystem[] = [
     slug: 'agenda-operacional',
     name: 'Agenda Operacional',
     tagline:
-      'Agenda interna com ações e validações após etapas do fluxo operacional.',
+      'Agenda com ações e validações após etapas do fluxo operacional.',
     objective:
       'Organizar ações operacionais e validações em uma agenda única, conectada ao fluxo de trabalho da equipe.',
     status: 'Em desenvolvimento',
@@ -147,7 +146,7 @@ export const systems: InternalSystem[] = [
     problem:
       'Ações e validações operacionais ficavam dispersas, sem um lugar único que conectasse tarefas ao andamento do fluxo.',
     solution:
-      'Estou desenvolvendo uma agenda operacional que centraliza ações e validações, integrada às demais etapas do ecossistema interno.',
+      'Estou desenvolvendo uma agenda operacional que centraliza ações e validações, integrada às demais etapas do ecossistema.',
     challenges: [
       'Integrar a agenda aos fluxos já existentes.',
       'Modelar ações que dependem de etapas anteriores.',
