@@ -6,7 +6,7 @@ interface ComingSoonModalProps {
 }
 
 /**
- * Modal "Em breve" — exibido ao clicar no botão de sistemas internos enquanto a
+ * Modal "Em breve" — exibido ao clicar no botão de sistemas práticos enquanto a
  * área dedicada permanece indisponível. Acessível: role="dialog" + aria-modal,
  * fecha com Esc e clique no backdrop, trava o scroll do body e devolve o foco.
  */
@@ -59,7 +59,7 @@ export function ComingSoonModal({ onClose }: ComingSoonModalProps) {
         </button>
 
         <span className="coming-soon__kicker" aria-hidden="true">
-          Sistemas internos
+          Sistemas Práticos
         </span>
 
         <h2 className="coming-soon__title" id={titleId}>
@@ -67,7 +67,7 @@ export function ComingSoonModal({ onClose }: ComingSoonModalProps) {
         </h2>
 
         <p className="coming-soon__text" id={descId}>
-          A área dedicada aos sistemas internos está sendo preparada e estará
+          A área dedicada aos sistemas práticos está sendo preparada e estará
           disponível em breve.
         </p>
 

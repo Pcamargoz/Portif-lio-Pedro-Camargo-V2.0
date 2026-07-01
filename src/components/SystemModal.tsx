@@ -15,7 +15,7 @@ const FOCUSABLE =
   'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
 
 /**
- * Modal de detalhes de um sistema interno. Acessível: role="dialog" + aria-modal,
+ * Modal de detalhes de um sistema prático. Acessível: role="dialog" + aria-modal,
  * trap de foco, fecha com Esc e clique no backdrop, trava o scroll do body e
  * devolve o foco ao elemento que o abriu.
  */
@@ -107,10 +107,10 @@ export function SystemModal({ system, onClose }: SystemModalProps) {
         </header>
 
         <p className="system-modal__confidential" role="note">
-          <span className="system-modal__lock" aria-hidden="true">🔒</span>
-          Sistema corporativo de uso interno. Por questões de sigilo, apenas uma
-          amostra visual e técnica autorizada é apresentada — regras de negócio,
-          dados e funcionalidades completas foram omitidos.
+          <span className="system-modal__lock" aria-hidden="true">🛠️</span>
+          Solução aplicada em ambiente profissional real. Apresento aqui uma
+          amostra visual e técnica — o suficiente para mostrar o problema
+          resolvido e como foi construído.
         </p>
 
         <div className="system-modal__body">
