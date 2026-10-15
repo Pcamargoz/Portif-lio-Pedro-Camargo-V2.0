@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react';
 import './FransNews.css';
 
 // Mídia do destaque ControlFree: troque só estas constantes quando a nova capa chegar.
-const MEDIA_SRC = '/media/capa_novidades_frans_v2.mp4';
-const MEDIA_POSTER = '/media/capa_novidades_frans_v2_poster.jpg';
+const MEDIA_SRC = '/media/capa_novidades_frans_v6.mp4';
+const MEDIA_POSTER = '/media/capa_novidades_frans_v6_poster.jpg';
 const MEDIA_ALT = 'Capa Novidades Frans: ControlFree em destaque e os apps Frans';
 
 const URL_DOWNLOADS = 'https://pcamargoz.github.io/frans-releases/';
