@@ -2,19 +2,19 @@ import type { Certification } from './types';
 
 export const certsIntro = {
   bigtext:
-    'Foco técnico em engenharia de software com ênfase em back-end — somado a mais de 100 certificações conquistadas em tecnologia.',
+    'Atuação em implantação de ERP e consultoria de processos, com formação técnica em desenvolvimento — somadas a mais de 100 certificações conquistadas em tecnologia.',
   metaNumber: 100,
   metaLabel: 'Certificações',
   metaText:
-    'Abaixo, o destaque da minha especialização técnica e uma curadoria das certificações mais relevantes para minha atuação profissional.',
+    'Abaixo, o destaque da minha formação técnica e uma curadoria das certificações mais relevantes para minha atuação profissional.',
 };
 
 export const certifications: Certification[] = [
   {
-    category: 'ENGENHARIA DE SOFTWARE · FOCO PRINCIPAL',
+    category: 'FORMAÇÃO TÉCNICA · DESENVOLVIMENTO',
     title: 'Back-end · Java, Spring Boot & APIs REST',
     description:
-      'Minha especialização técnica e direção de carreira. Atuo no desenvolvimento de APIs REST escaláveis em Java/Spring Boot, com integração a bancos relacionais, segurança, testes e ambientes containerizados. Trajetória que combina formação acadêmica em ADS na Facens, atuação prática diária no produto da empresa e estudo contínuo de arquitetura, padrões de projeto e boas práticas de engenharia de software.',
+      'Meu estudo técnico em paralelo à atuação em implantação. Desenvolvo APIs REST em Java/Spring Boot em projetos acadêmicos e pessoais, com bancos relacionais, segurança e ambientes containerizados. Une a formação em ADS na Facens ao estudo contínuo de arquitetura e boas práticas.',
     featured: true,
     issuer: 'Facens · ADS & prática profissional',
     badge: 'code',

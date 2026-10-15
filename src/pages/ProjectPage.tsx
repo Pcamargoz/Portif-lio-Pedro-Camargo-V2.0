@@ -10,7 +10,7 @@ import { Button } from '../components/Button';
 import NotFoundPage from './NotFoundPage';
 import './ProjectPage.css';
 
-const DEFAULT_TITLE = 'Pedro César Camargo — Backend Developer · Java · Spring Boot';
+const DEFAULT_TITLE = 'Pedro César Camargo — Implantação de ERP e consultoria de processos';
 
 const GitHubIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">

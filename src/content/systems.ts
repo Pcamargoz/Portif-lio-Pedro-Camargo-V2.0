@@ -11,7 +11,7 @@ export const sistemasMedia: {
 } = {
   logo: {
     src: '/sistemas/sistemas-logo.png',
-    alt: 'Pedro César Camargo dos Santos — Desenvolvedor Back-end.',
+    alt: 'Pedro César Camargo dos Santos — Implantação de ERP e consultoria de processos.',
   },
   linktree: {
     src: '/sistemas/sistemas-linktree.jpeg',

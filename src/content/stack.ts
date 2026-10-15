@@ -1,7 +1,7 @@
 import type { StackArea } from './types';
 
 export const stackIntro =
-  'Um conjunto de tecnologias que utilizo no dia a dia para construir, validar e sustentar sistemas — do back-end ao deploy, passando por dados, cloud, IA e colaboração.';
+  'Tecnologias que estudo e uso em projetos próprios e acadêmicos, e que me ajudam a dialogar com o time de desenvolvimento.';
 
 export const stackAreas: StackArea[] = [
   {
@@ -54,9 +54,9 @@ export const stackAreas: StackArea[] = [
   },
   {
     index: 'G.',
-    title: 'QA, validação & soft skills',
+    title: 'Implantação, QA & comunicação',
     description:
-      'O diferencial que carrego: testes de produto, abertura de chamados, colaboração com QA e devs, comunicação técnica, condução de stakeholders, escrita de documentação e tradução de regras de negócio em solução técnica.',
+      'Meu dia a dia: implantação e consultoria de fluxos, conversa com o cliente, reporte de bugs, sugestões de melhoria, colaboração com QA e devs, documentação e tradução de regras de negócio em processo no sistema.',
     tags: [
       'Testes exploratórios',
       'QA colaborativo',

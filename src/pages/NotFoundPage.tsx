@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const DEFAULT_TITLE = 'Pedro César Camargo — Backend Developer · Java · Spring Boot';
+const DEFAULT_TITLE = 'Pedro César Camargo — Implantação de ERP e consultoria de processos';
 
 export default function NotFoundPage() {
   useEffect(() => {

@@ -1,7 +1,7 @@
 import type { ContactItem, FeaturedContact } from './types';
 
 export const contactBigtext =
-  'Vamos construir algo que importa? Estou aberto a oportunidades back-end, networking e parcerias técnicas de longo prazo.';
+  'Vamos conversar? Estou aberto a networking e parcerias nas áreas de implantação de ERP, processos e produto.';
 
 export const featuredContact: FeaturedContact = {
   kicker: 'CANAL PRINCIPAL · NETWORKING & INFLUÊNCIA',

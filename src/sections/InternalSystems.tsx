@@ -38,7 +38,7 @@ export function InternalSystems() {
       </p>
 
       <p className="sistemas__intro">
-        Ferramentas práticas que projetei e desenvolvi para resolver problemas
+        Ferramentas práticas pensadas para resolver problemas
         reais do dia a dia — identificando gargalos no fluxo de trabalho e
         transformando-os em soluções que otimizam a rotina da equipe.
       </p>

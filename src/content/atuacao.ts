@@ -3,7 +3,7 @@ import type { AtuacaoCard } from './types';
 export const atuacaoIntro = {
   kicker: 'FAKTORY SOFTWARES · SOROCABA · SP',
   paragraph:
-    'No dia a dia, atuo no desenvolvimento e validação do produto web mais recente da empresa — combinando olhar de engenharia, QA e consultoria de implantação. Trabalho integrado com devs e analistas de qualidade no ciclo completo de melhoria contínua.',
+    'No dia a dia, atuo na implantação do ERP em indústrias de esquadrias: converso com o cliente, elaboro fluxos e acompanho o processo do contrato fechado até a entrega da obra. Apoio o QA e o desenvolvimento com bugs e sugestões de melhoria do produto.',
 };
 
 export const atuacaoCards: AtuacaoCard[] = [
@@ -11,22 +11,22 @@ export const atuacaoCards: AtuacaoCard[] = [
     num: '01',
     title: 'Testes & validação de produto',
     paragraphs: [
-      'Executo testes exploratórios e de validação no produto web em desenvolvimento, identificando erros, comportamentos inconsistentes e oportunidades de melhoria antes que cheguem ao cliente.',
+      'Analiso o produto a partir do uso real na implantação, identificando erros, comportamentos inconsistentes e oportunidades de melhoria.',
     ],
   },
   {
     num: '02',
     title: 'Colaboração com QA & devs',
     paragraphs: [
-      'Abro chamados estruturados, documento evidências e converso diretamente com o time de QA e os desenvolvedores para acelerar correções e refinar requisitos técnicos.',
+      'Reporto bugs, dou sugestões de melhoria do produto e converso diretamente com o time de QA e os desenvolvedores para acelerar correções.',
     ],
   },
   {
     num: '03',
     title: 'Consultoria & implantação de ERP',
     paragraphs: [
-      'Atuação central da minha carreira hoje: presto consultoria direta a clientes e conduzo treinamentos para que o sistema seja implantado com eficiência — atualmente em grandes empresas do ramo de indústria de esquadrias, conduzindo do levantamento de requisitos à entrega final em produção.',
-      'Domino o fluxo principal de ERP com forte conhecimento fiscal e de negócios — o que me prepara para escalar essa expertise a clientes de qualquer ramo. Visão de futuro: levar minha atuação para indústria, comércio, serviços e além, sempre transformando regras de negócio em sistema confiável.',
+      'Meu foco principal: converso com os clientes, elaboro fluxos e presto consultoria a empresas da indústria de esquadrias, ajudando a melhorar os fluxos internos e a trazer o processo para dentro do sistema. Acompanho a gestão do ERP completo, do contrato fechado até a entrega da obra.',
+      'Transformo regras de negócio em processo claro dentro do sistema, com foco em otimizar a forma como a empresa trabalha.',
     ],
     tags: [
       'Consultoria',
