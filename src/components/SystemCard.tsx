@@ -8,6 +8,8 @@ interface SystemCardProps {
   system: InternalSystem;
   index: number;
   onOpen: () => void;
+  /** Sistema ainda não publicado: exibe o selo "Em breve". */
+  comingSoon?: boolean;
 }
 
 /**
@@ -15,7 +17,7 @@ interface SystemCardProps {
  * <button> que abre um modal (não navega) — reforça a ideia de demonstração
  * controlada. Estética coerente com o ProjectCard.
  */
-export function SystemCard({ system, index, onOpen }: SystemCardProps) {
+export function SystemCard({ system, index, onOpen, comingSoon }: SystemCardProps) {
   const number = String(index + 1).padStart(2, '0');
   const techs = system.tech.slice(0, 5);
 
@@ -44,6 +46,8 @@ export function SystemCard({ system, index, onOpen }: SystemCardProps) {
         <span className="system-card__seal" aria-hidden="true">
           Amostra autorizada
         </span>
+
+        {comingSoon && <span className="system-card__soon">Em breve</span>}
 
         {system.status === 'Em desenvolvimento' && (
           <img

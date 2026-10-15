@@ -5,6 +5,10 @@
 
 :root {
   /* palette */
+  --frans-red: #C4001A;
+  --frans-red-edge: #8E0013;
+  --frans-cream: #F6E7B6;
+  --frans-ink: #2A1E10;
   --bg:        #0E0D0B;
   --bg-2:      #15130F;
   --bg-3:      #1B1814;

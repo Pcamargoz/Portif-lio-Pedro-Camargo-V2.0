@@ -21,6 +21,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
     <Link
       to={`/projetos/${project.slug}`}
       className="project-card"
+      data-accent={project.accent}
       aria-label={`Ver projeto ${project.title}`}
     >
       <div className="project-card__top">
@@ -43,6 +44,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       </div>
 
       <TagList tags={techs} label={`Tecnologias de ${project.title}`} />
+
+      {project.demoSoon && (
+        <span className="project-card__soon">Demo · em breve</span>
+      )}
 
       <span className="project-card__cta" aria-hidden="true">
         Ver projeto →

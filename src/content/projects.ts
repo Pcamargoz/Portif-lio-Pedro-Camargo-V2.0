@@ -105,6 +105,122 @@ export const projects: Project[] = [
     githubRepo: 'Pcamargoz/NeoEnergy---Facens',
     fallbackStats: { stars: 0, languages: ['Java'], pushedAt: null },
   },
+  {
+    slug: 'food-orders',
+    title: 'Food Orders',
+    status: 'Em desenvolvimento',
+    categories: ['Front-end', 'Restaurante'],
+    summary:
+      'Interface de pedidos e controle de cozinha: mesas, comanda, fila da cozinha, estoque, pagamentos, comissões e dashboards.',
+    descriptionLead:
+      'Interface de pedidos e controle de cozinha: mesas, comanda, fila da cozinha, estoque, pagamentos, comissões e dashboards.',
+    descriptionBody:
+      'Front-end em React 19 com TypeScript e Vite, testado com Vitest. O código é privado; a demonstração fica disponível em breve.',
+    tech: ['React 19', 'TypeScript', 'Vite', 'Vitest'],
+    media: {
+      type: 'placeholder',
+      caption: 'Fig. 03 · Demonstração em breve — o repositório é privado.',
+    },
+    links: [],
+    fallbackStats: { stars: 0, languages: [], pushedAt: null },
+    isPrivate: true,
+    demoSoon: true,
+  },
+  {
+    slug: 'criador-de-subagents',
+    title: 'Criador de Subagents',
+    status: 'Em desenvolvimento',
+    categories: ['Full-stack', 'IA'],
+    summary:
+      'Aplicação web que gera prompts prontos para o Claude Code: subagents individuais e times multiagente, com escolha de modelo e subagents próprios.',
+    descriptionLead:
+      'Aplicação web que gera prompts prontos para o Claude Code: subagents individuais e times multiagente, com escolha de modelo e subagents próprios.',
+    descriptionBody:
+      'Front-end em React com Vite e Tailwind v4, integrado a um back-end em Spring Boot. O código é privado; a demonstração fica disponível em breve.',
+    tech: ['React', 'Vite', 'Tailwind v4', 'Spring Boot'],
+    media: {
+      type: 'placeholder',
+      caption: 'Fig. 04 · Demonstração em breve — o repositório é privado.',
+    },
+    links: [],
+    fallbackStats: { stars: 0, languages: [], pushedAt: null },
+    isPrivate: true,
+    demoSoon: true,
+  },
+  {
+    slug: 'reservex',
+    title: 'Reservex',
+    status: 'Em desenvolvimento',
+    categories: ['Front-end', 'Restaurante'],
+    summary:
+      'Front-end de um sistema de reserva de mesas: calendário com ocupação por dia, mapa do salão e lista de mesas, reserva em passos (data, horário, mesa, confirmação), login e cadastro.',
+    descriptionLead:
+      'Front-end de um sistema de reserva de mesas: calendário com ocupação por dia, mapa do salão e lista de mesas, reserva em passos (data, horário, mesa, confirmação), login e cadastro.',
+    descriptionBody:
+      'Front-end em React 19 com React Router 7, TypeScript e Vite, estilizado com CSS Modules e empacotado com Docker e nginx. O código é privado; a demonstração fica disponível em breve.',
+    tech: ['React 19', 'React Router 7', 'TypeScript', 'Vite', 'CSS Modules', 'Docker', 'nginx'],
+    media: {
+      type: 'placeholder',
+      caption: 'Fig. 06 · Demonstração em breve — o repositório é privado.',
+    },
+    links: [],
+    fallbackStats: { stars: 0, languages: [], pushedAt: null },
+    isPrivate: true,
+    demoSoon: true,
+  },
+  {
+    slug: 'financeiro',
+    title: 'Financeiro',
+    status: 'Em desenvolvimento',
+    categories: ['Front-end', 'Finanças'],
+    summary:
+      'App de finanças pessoais em que você atualiza o saldo real de cada conta e o Saldo Geral é a soma delas. Contas, custos recorrentes, caixinhas, resumo mensal, relatórios e perfil.',
+    descriptionLead:
+      'App de finanças pessoais em que você atualiza o saldo real de cada conta e o Saldo Geral é a soma delas. Contas, custos recorrentes, caixinhas, resumo mensal, relatórios e perfil.',
+    descriptionBody:
+      'Front-end em React 18 com React Router 6, Framer Motion, TypeScript e Vite, publicado no Cloudflare Pages. O código é privado; a demonstração fica disponível em breve.',
+    tech: ['React 18', 'React Router 6', 'Framer Motion', 'TypeScript', 'Vite', 'Cloudflare Pages'],
+    media: {
+      type: 'placeholder',
+      caption: 'Fig. 07 · Demonstração em breve — o repositório é privado.',
+    },
+    links: [],
+    fallbackStats: { stars: 0, languages: [], pushedAt: null },
+    isPrivate: true,
+    demoSoon: true,
+  },
+  {
+    slug: 'frans-downloads',
+    title: 'Frans (downloads)',
+    status: 'Disponível',
+    categories: ['Distribuição', 'Desktop'],
+    summary:
+      'Instaladores públicos dos apps Frans para Mac e Windows e página de download.',
+    descriptionLead:
+      'Instaladores públicos dos apps Frans para Mac (.dmg) e Windows (.exe) e a página de download.',
+    descriptionBody:
+      'O repositório frans-releases reúne os instaladores e publica a página de download via GitHub Pages.',
+    tech: ['GitHub Releases', 'GitHub Pages', 'macOS', 'Windows'],
+    media: {
+      type: 'placeholder',
+      caption: 'Fig. 05 · Página de download dos apps Frans.',
+    },
+    links: [
+      {
+        label: 'Baixar',
+        href: 'https://pcamargoz.github.io/frans-releases/',
+        kind: 'live',
+      },
+      {
+        label: 'Ver código',
+        href: 'https://github.com/Pcamargoz/frans-releases',
+        kind: 'github',
+      },
+    ],
+    githubRepo: 'Pcamargoz/frans-releases',
+    fallbackStats: { stars: 0, languages: [], pushedAt: null },
+    accent: 'frans',
+  },
 ];
 
 export function getProject(slug: string): Project | undefined {

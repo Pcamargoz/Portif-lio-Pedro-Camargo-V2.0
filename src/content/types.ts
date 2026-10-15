@@ -32,6 +32,12 @@ export interface Project {
   links: ProjectLink[];
   githubRepo?: string;
   fallbackStats: GitHubRepoStats;
+  /** Repositório privado: sem link de código; demo "em breve" até haver URL. */
+  isPrivate?: boolean;
+  /** Botão de demo desabilitado ("em breve") enquanto não existe URL de demo. */
+  demoSoon?: boolean;
+  /** Acento visual restrito ao bloco Frans. */
+  accent?: 'frans';
 }
 
 export type SystemStatus = 'Em produção' | 'Em desenvolvimento' | 'Finalizado';

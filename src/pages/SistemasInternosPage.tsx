@@ -102,6 +102,7 @@ export default function SistemasInternosPage() {
               system={system}
               index={index}
               onOpen={() => setOpenSlug(system.slug)}
+              comingSoon
             />
           ))}
         </div>

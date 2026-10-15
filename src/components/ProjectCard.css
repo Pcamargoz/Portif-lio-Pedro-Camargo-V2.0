@@ -86,3 +86,26 @@
 @media (max-width: 620px) {
   .project-card { padding: 26px 22px; gap: 14px; }
 }
+
+/* Chip "demo em breve" (projetos privados sem demo) */
+.project-card__soon {
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mute);
+  border: 1px dashed var(--line);
+  padding: 6px 10px;
+}
+
+/* Acento Frans — escopado ao card/página Frans, tema escuro preservado */
+[data-accent='frans'] {
+  --accent: var(--frans-cream);
+}
+.project-card[data-accent='frans'] {
+  border-left: 3px solid var(--frans-red);
+}
+.project-card[data-accent='frans']:hover {
+  border-color: var(--frans-red);
+}

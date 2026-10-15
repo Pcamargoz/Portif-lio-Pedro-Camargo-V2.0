@@ -77,7 +77,7 @@ export default function ProjectPage() {
   const next = projects[index + 1];
 
   return (
-    <article className="section project-page">
+    <article className="section project-page" data-accent={project.accent}>
       <nav className="project-page__breadcrumb" aria-label="Trilha de navegação">
         <Link to="/#projetos" className="inline-link project-page__back">
           ← Todos os projetos
@@ -137,6 +137,15 @@ export default function ProjectPage() {
             {link.label}
           </Button>
         ))}
+        {project.demoSoon && (
+          <span
+            className="btn btn--ghost btn--sm project__demo-soon"
+            role="button"
+            aria-disabled="true"
+          >
+            <span>Ver demo · em breve</span>
+          </span>
+        )}
       </div>
 
       <nav className="project-page__pager" aria-label="Outros projetos">

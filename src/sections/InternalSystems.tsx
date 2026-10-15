@@ -25,7 +25,17 @@ export function InternalSystems() {
 
   return (
     <section className="section sistemas" id="sistemas">
-      <SectionHeading number="/ 02" title="Sistemas Práticos" id="sistemas-titulo" />
+      <SectionHeading number="/ 02" title="Sistemas Internos da Empresa" id="sistemas-titulo" />
+
+      <p className="sistemas__badge-row">
+        <span className="system-status system-status--wip sistemas__badge">
+          <span className="system-status__dot" aria-hidden="true" />
+          Em breve
+        </span>
+        <span className="sistemas__reserved">
+          Seção reservada a projetos internos da empresa
+        </span>
+      </p>
 
       <p className="sistemas__intro">
         Ferramentas práticas que projetei e desenvolvi para resolver problemas

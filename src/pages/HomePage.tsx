@@ -1,6 +1,7 @@
 import { profile } from '../content/profile';
 import { Hero } from '../sections/Hero';
 import { Marquee } from '../components/Marquee';
+import { FransNews } from '../sections/FransNews';
 import { ProjectsShowcase } from '../sections/ProjectsShowcase';
 import { InternalSystems } from '../sections/InternalSystems';
 import { About } from '../sections/About';
@@ -19,6 +20,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Marquee items={profile.marqueeItems} />
+      <FransNews />
       <ProjectsShowcase />
       <InternalSystems />
       <About />

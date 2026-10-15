@@ -164,3 +164,15 @@
     text-align: left;
   }
 }
+
+/* Botão de demo desabilitado (repo privado, sem demo ainda) */
+.project__demo-soon {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+  min-height: 44px;
+}
+
+.project__links .btn { min-height: 44px; }
+
+.project-page__back { display: inline-flex; align-items: center; min-height: 44px; }
